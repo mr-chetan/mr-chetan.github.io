@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import tailwindcss from "@tailwindcss/vite";
 import cleanup from 'rollup-plugin-cleanup';
 import path from 'path';
+import handlebars from 'vite-plugin-handlebars';
 
 export default defineConfig({
     build: {
@@ -17,6 +18,9 @@ export default defineConfig({
     },
     plugins: [
         tailwindcss(),
+            handlebars({
+                partialDirectory: path.resolve(__dirname, 'partials'),
+            }),
     ],
     server: {
         cors: true,

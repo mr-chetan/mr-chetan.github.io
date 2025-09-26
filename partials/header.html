@@ -1,0 +1,68 @@
+<!-- Navigation -->
+<header class="sticky top-0 z-50">
+    <nav class="w-full bg-white shadow-lg" x-data="{ mobileMenuOpen: false }">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-gray-900">Chetan</h1>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a
+                            href="#about"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
+                            >About</a
+                        >
+                        <a
+                            href="#resume"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
+                            >Resume</a
+                        >
+                        <a
+                            href="#contact"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
+                            >Contact</a
+                        >
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-600 hover:text-gray-900">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div x-show="mobileMenuOpen" class="md:hidden">
+                <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+                    <a
+                        href="#about"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900"
+                        >About</a
+                    >
+                    <a
+                        href="#resume"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900"
+                        >Resume</a
+                    >
+                    <a
+                        href="#contact"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900"
+                        >Contact</a
+                    >
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
