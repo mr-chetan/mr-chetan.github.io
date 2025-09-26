@@ -1,287 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Privacy Policy - Chetan Lar</title>
+        <link rel="stylesheet" href="../src/css/app.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Chetan Lar</title>
-    <link rel="stylesheet" href="../src/css/app.css">
-</head>
+    <body class="font-roboto bg-gray-50">
+        <load src="../src/html/partials/header.html" />
 
-<body class="bg-gray-50 font-roboto">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full top-0 z-50" x-data="{ mobileMenuOpen: false }">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="text-2xl font-bold text-gray-900">Chetan</a>
+        <!-- Main Content -->
+        <main class="pt-16">
+            <!-- Header Section -->
+            <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+                <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+                    <h1 class="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">Privacy Policy</h1>
+                    <p class="text-xl text-gray-600">How we collect, use, and protect your information</p>
                 </div>
+            </section>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html#about"
-                            class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="index.html#resume"
-                            class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Resume</a>
-                        <a href="index.html#contact"
-                            class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                    </div>
-                </div>
+            <!-- Privacy Policy Content -->
+            <section class="bg-white py-20">
+                <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                    <div class="prose prose-lg max-w-none">
+                        <p class="mb-8 text-gray-600">
+                            <strong>Effective Date:</strong> September 26, 2025<br />
+                            <strong>Last Updated:</strong> September 26, 2025
+                        </p>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-600 hover:text-gray-900">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div x-show="mobileMenuOpen" class="md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="index.html#about"
-                        class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">About</a>
-                    <a href="index.html#resume"
-                        class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Resume</a>
-                    <a href="index.html#contact"
-                        class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="pt-16">
-        <!-- Header Section -->
-        <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
-                <p class="text-xl text-gray-600">How we collect, use, and protect your information</p>
-            </div>
-        </section>
-
-        <!-- Privacy Policy Content -->
-        <section class="py-20 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="prose prose-lg max-w-none">
-                    <p class="text-gray-600 mb-8">
-                        <strong>Effective Date:</strong> September 26, 2025<br>
-                        <strong>Last Updated:</strong> September 26, 2025
-                    </p>
-
-                    <div class="space-y-8">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
-                            <p class="text-gray-700 leading-relaxed">
-                                This Privacy Policy describes how Chetan Lar ("we," "our," or "us") collects, uses, and
-                                protects your personal information when you visit our website or use our services. We are
-                                committed to protecting your privacy and ensuring the security of your personal information.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Information We Collect</h2>
-                            <div class="space-y-4">
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">2.1 Personal Information</h3>
-                                    <p class="text-gray-700 leading-relaxed">
-                                        We may collect personal information that you voluntarily provide to us, including:
-                                    </p>
-                                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                                        <li>Name</li>
-                                        <li>Email address</li>
-                                        <li>Phone number</li>
-                                        <li>Project details and requirements</li>
-                                        <li>Any other information you choose to provide</li>
-                                    </ul>
-                                </div>
-
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">2.2 Usage Information</h3>
-                                    <p class="text-gray-700 leading-relaxed">
-                                        We automatically collect certain information about your use of our website, including:
-                                    </p>
-                                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                                        <li>IP address</li>
-                                        <li>Browser type and version</li>
-                                        <li>Pages visited and time spent on our site</li>
-                                        <li>Referring website</li>
-                                        <li>Device information</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">3. How We Use Your Information</h2>
-                            <p class="text-gray-700 leading-relaxed mb-4">
-                                We use the information we collect for the following purposes:
-                            </p>
-                            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                                <li>To respond to your inquiries and provide requested services</li>
-                                <li>To communicate with you about projects and services</li>
-                                <li>To improve our website and services</li>
-                                <li>To send you updates and promotional materials (with your consent)</li>
-                                <li>To comply with legal obligations</li>
-                                <li>To protect our rights and prevent fraud</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Information Sharing and Disclosure</h2>
-                            <p class="text-gray-700 leading-relaxed mb-4">
-                                We do not sell, trade, or rent your personal information to third parties. We may share
-                                your information in the following circumstances:
-                            </p>
-                            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                                <li>With your explicit consent</li>
-                                <li>To comply with legal obligations or court orders</li>
-                                <li>To protect our rights, property, or safety</li>
-                                <li>With trusted service providers who assist us in operating our website</li>
-                                <li>In connection with a business transfer or acquisition</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">5. Data Security</h2>
-                            <p class="text-gray-700 leading-relaxed">
-                                We implement appropriate technical and organizational measures to protect your personal
-                                information against unauthorized access, alteration, disclosure, or destruction. However,
-                                no method of transmission over the internet or electronic storage is 100% secure.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">6. Data Retention</h2>
-                            <p class="text-gray-700 leading-relaxed">
-                                We retain your personal information only for as long as necessary to fulfill the purposes
-                                outlined in this Privacy Policy, unless a longer retention period is required by law.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">7. Your Rights</h2>
-                            <p class="text-gray-700 leading-relaxed mb-4">
-                                You have the following rights regarding your personal information:
-                            </p>
-                            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                                <li>Right to access your personal information</li>
-                                <li>Right to correct inaccurate information</li>
-                                <li>Right to delete your personal information</li>
-                                <li>Right to restrict processing</li>
-                                <li>Right to data portability</li>
-                                <li>Right to object to processing</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">8. Cookies and Tracking Technologies</h2>
-                            <p class="text-gray-700 leading-relaxed">
-                                We use cookies and similar tracking technologies to enhance your experience on our website.
-                                You can control cookie settings through your browser preferences.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">9. Third-Party Links</h2>
-                            <p class="text-gray-700 leading-relaxed">
-                                Our website may contain links to third-party websites. We are not responsible for the
-                                privacy practices of these external sites. We encourage you to review their privacy policies.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">10. Changes to This Privacy Policy</h2>
-                            <p class="text-gray-700 leading-relaxed">
-                                We may update this Privacy Policy from time to time. We will notify you of any significant
-                                changes by posting the new policy on this page and updating the effective date.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">11. Contact Us</h2>
-                            <p class="text-gray-700 leading-relaxed mb-4">
-                                If you have any questions about this Privacy Policy or how we handle your personal information,
-                                please contact us:
-                            </p>
-                            <div class="bg-gray-50 p-6 rounded-lg">
-                                <p class="text-gray-700"><strong>Email:</strong> contact@mrchetan.com</p>
-                                <p class="text-gray-700"><strong>Phone:</strong> +91-9460053140</p>
-                                <p class="text-gray-700">
-                                    <strong>Address:</strong> 26/F/105 CM Teacher and Parhari Scheme,
-                                    Pratap Nagar, Sector 26, Sanganer, Jaipur, Rajasthan 302033
+                        <div class="space-y-8">
+                            <div>
+                                <h2 class="mb-4 text-2xl font-bold text-gray-900">1. Introduction</h2>
+                                <p class="leading-relaxed text-gray-700">
+                                    This Privacy Policy describes how Chetan Lar ("we," "our," or "us") collects, uses,
+                                    and protects your personal information when you visit our website or use our
+                                    services. We are committed to protecting your privacy and ensuring the security of
+                                    your personal information.
                                 </p>
                             </div>
+
+                            <div>
+                                <h2 class="mb-4 text-2xl font-bold text-gray-900">2. Information We Collect</h2>
+                                <div class="space-y-4">
+                                    <div>
+                                        <h3 class="mb-2 text-xl font-semibold text-gray-800">
+                                            2.1 Personal Information
+                                        </h3>
+                                        <p class="leading-relaxed text-gray-700">
+                                            We may collect personal information that you voluntarily provide to us,
+                                            including:
+                                        </p>
+                                        <ul class="mt-2 list-inside list-disc space-y-1 text-gray-700">
+                                            <li>Name</li>
+                                            <li>Email address</li>
+                                            <li>Phone number</li>
+                                            <li>Project details and requirements</li>
+                                            <li>Any other information you choose to provide</li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="mb-2 text-xl font-semibold text-gray-800">2.2 Usage Information</h3>
+                                        <p class="leading-relaxed text-gray-700">
+                                            We automatically collect certain information about your use of our website,
+                                            including:
+                                        </p>
+                                        <ul class="mt-2 list-inside list-disc space-y-1 text-gray-700">
+                                            <li>IP address</li>
+                                            <li>Browser type and version</li>
+                                            <li>Pages visited and time spent on our site</li>
+                                            <li>Referring website</li>
+                                            <li>Device information</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h2 class="mb-4 text-2xl font-bold text-gray-900">3. How We Use Your Information</h2>
+                                <p class="mb-4 leading-relaxed text-gray-700">
+                                    We use the information we collect for the following purposes:
+                                </p>
+                                <ul class="list-inside list-disc space-y-2 text-gray-700">
+                                    <li>To respond to your inquiries and provide requested services</li>
+                                    <li>To communicate with you about projects and services</li>
+                                    <li>To improve our website and services</li>
+                                    <li>To send you updates and promotional materials (with your consent)</li>
+                                    <li>To comply with legal obligations</li>
+                                    <li>To protect our rights and prevent fraud</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h2 class="mb-4 text-2xl font-bold text-gray-900">
+                                    4. Information Sharing and Disclosure
+                                </h2>
+                                <p class="mb-4 leading-relaxed text-gray-700">
+                                    We do not sell, trade, or rent your personal information to third parties. We may
+                                    share your information in the following circumstances:
+                                </p>
+                                <ul class="list-inside list-disc space-y-2 text-gray-700">
+                                    <li>With your explicit consent</li>
+                                    <li>To comply with legal obligations or court orders</li>
+                                    <li>To protect our rights, property, or safety</li>
+                                    <li>With trusted service providers who assist us in operating our website</li>
+                                    <li>In connection with a business transfer or acquisition</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h2 class="mb-4 text-2xl font-bold text-gray-900">5. Data Security</h2>
+                                <p class="leading-relaxed text-gray-700">
+                                    We implement appropriate technical and organizational measures to protect your
+                                    personal information against unauthorized access, alteration, disclosure, or
+                                    destruction. However, no method of transmission over the internet or electronic
+                                    storage is 100% secure.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h2 class="mb-4 text-2xl font-bold text-gray-900">6. Data Retention</h2>
+                                <p class="leading-relaxed text-gray-700">
+                                    We retain your personal information only for as long as necessary to fulfill the
+                                    purposes outlined in this Privacy Policy, unless a longer retention period is
+                                    required by law.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h2 class="mb-4 text-2xl font-bold text-gray-900">7. Your Rights</h2>
+                                <p class="mb-4 leading-relaxed text-gray-700">
+                                    You have the following rights regarding your personal information:
+                                </p>
+                                <ul class="list-inside list-disc space-y-2 text-gray-700">
+                                    <li>Right to access your personal information</li>
+                                    <li>Right to correct inaccurate information</li>
+                                    <li>Right to delete your personal information</li>
+                                    <li>Right to restrict processing</li>
+                                    <li>Right to data portability</li>
+                                    <li>Right to object to processing</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h2 class="mb-4 text-2xl font-bold text-gray-900">
+                                    8. Cookies and Tracking Technologies
+                                </h2>
+                                <p class="leading-relaxed text-gray-700">
+                                    We use cookies and similar tracking technologies to enhance your experience on our
+                                    website. You can control cookie settings through your browser preferences.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h2 class="mb-4 text-2xl font-bold text-gray-900">9. Third-Party Links</h2>
+                                <p class="leading-relaxed text-gray-700">
+                                    Our website may contain links to third-party websites. We are not responsible for
+                                    the privacy practices of these external sites. We encourage you to review their
+                                    privacy policies.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h2 class="mb-4 text-2xl font-bold text-gray-900">
+                                    10. Changes to This Privacy Policy
+                                </h2>
+                                <p class="leading-relaxed text-gray-700">
+                                    We may update this Privacy Policy from time to time. We will notify you of any
+                                    significant changes by posting the new policy on this page and updating the
+                                    effective date.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h2 class="mb-4 text-2xl font-bold text-gray-900">11. Contact Us</h2>
+                                <p class="mb-4 leading-relaxed text-gray-700">
+                                    If you have any questions about this Privacy Policy or how we handle your personal
+                                    information, please contact us:
+                                </p>
+                                <div class="rounded-lg bg-gray-50 p-6">
+                                    <p class="text-gray-700"><strong>Email:</strong> contact@mrchetan.com</p>
+                                    <p class="text-gray-700"><strong>Phone:</strong> +91-9460053140</p>
+                                    <p class="text-gray-700">
+                                        <strong>Address:</strong> 26/F/105 CM Teacher and Parhari Scheme, Pratap Nagar,
+                                        Sector 26, Sanganer, Jaipur, Rajasthan 302033
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-8">
-                    <div class="flex justify-center flex-wrap gap-6 mb-8">
-                        <a href="index.html#about"
-                            class="text-gray-300 hover:text-white text-sm transition-colors">ABOUT</a>
-                        <a href="index.html#resume"
-                            class="text-gray-300 hover:text-white text-sm transition-colors">RESUME</a>
-                        <a href="index.html#contact"
-                            class="text-gray-300 hover:text-white text-sm transition-colors">CONTACT</a>
-                        <a href="privacy.html"
-                            class="text-gray-300 hover:text-white text-sm transition-colors">PRIVACY POLICY</a>
-                        <a href="refund.html"
-                            class="text-gray-300 hover:text-white text-sm transition-colors">REFUND & RETURNS
-                            POLICY</a>
-                        <a href="terms.html" class="text-gray-300 hover:text-white text-sm transition-colors">TERMS
-                            & CONDITION</a>
-                    </div>
+        <load src="../src/html/partials/footer.html" />
 
-                    <div class="flex justify-center space-x-6 mb-8">
-                        <a href="https://www.linkedin.com/in/mr-chetan/" target="_blank"
-                            class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" />
-                            </svg>
-                        </a>
-                        <a href="https://github.com/mr-chetan" target="_blank"
-                            class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                        <a href="https://stackoverflow.com/users/13265630/chetan" target="_blank"
-                            class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="size-6" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="#BBB" d="M101.072 82.51h11.37V128H10.04V82.51h11.37v34.11h79.64Z">
-                                </path>
-                                <path fill="#F58025"
-                                    d="M33.82 79.13L89.7 90.868l2.34-11.17 -55.88-11.75Zm7.39-26.75l51.76 24.1 4.82-10.35 -51.768-24.1Zm14.32-25.39l43.88 36.53 7.3-8.78 -43.89-36.53Zm28.33-27L74.69 6.8l34.08 45.802 9.16-6.81ZM32.79 105.25h56.89V93.87H32.79Z">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <p class="text-gray-400 text-sm">© 2023 Mr Chetan, All rights reserved. Unauthorized
-                        duplication or
-                        publication of any materials from this Site is expressly prohibited.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script type="module" src="../src/js/app.js"></script>
-
-</body>
-
+        <script type="module" src="../src/js/app.js"></script>
+    </body>
 </html>

@@ -17,8 +17,8 @@ export default defineConfig({
         },
     },
     plugins: [
-        tailwindcss(),
         injectHTML(),
+        tailwindcss(),
     ],
     server: {
         cors: true,
