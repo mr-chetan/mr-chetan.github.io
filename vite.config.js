@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite';
 import cleanup from 'rollup-plugin-cleanup';
 import path from 'path';
 import injectHTML from 'vite-plugin-html-inject';
@@ -16,10 +16,7 @@ export default defineConfig({
             plugins: [cleanup({ comments: 'none' })],
         },
     },
-    plugins: [
-        injectHTML(),
-        tailwindcss(),
-    ],
+    plugins: [injectHTML(), tailwindcss()],
     server: {
         cors: true,
     },
