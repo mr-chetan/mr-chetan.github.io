@@ -1,307 +1,252 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <load src="src/html/partials/head.html" />
-        <title>Mr. Chetan - Software Developer</title>
+        <load src="/src/html/partials/head.html" />
+        <title>Mr Chetan - Software Developer</title>
         <!-- Link css -->
-        <link href="src/css/app.css" rel="stylesheet" />
     </head>
 
-    <body class="font-roboto min-h-screen bg-gray-50">
-        <load src="src/html/partials/header.html" />
-
+    <body class="bg-dark-50 dark:bg-dark-800 min-h-screen antialiased transition-all duration-200" x-data>
+        <load src="/src/html/partials/header.html" />
         <main class="">
             <!-- Hero Section -->
-            <section id="about" class="flex min-h-1/6 items-center bg-gradient-to-br from-blue-50 to-indigo-100 pt-16">
-                <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-                    <div class="py-12">
-                        <img
-                            src="/chetan.jpeg"
-                            alt="Chetan"
-                            class="mx-auto mb-8 h-32 w-32 rounded-full border-4 border-white shadow-lg"
-                        />
-                        <h1 class="mb-4 text-4xl font-bold text-gray-900 md:text-6xl">Mr. Chetan - Home</h1>
-                        <p class="mb-8 text-xl text-gray-600 md:text-2xl">Software Developer from Jaipur, India</p>
-                        <div class="mb-8 flex justify-center space-x-4">
-                            <a
-                                href="https://www.linkedin.com/in/mr-chetan/"
-                                target="_blank"
-                                class="text-blue-600 hover:text-blue-800"
+            <section
+                id="about"
+                class="from-primary-50 to-primary-100 dark:from-primary-900 dark:to-primary-700 flex items-center bg-gradient-to-br pt-16"
+            >
+                <div class="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8">
+                    <img
+                        src="/public/chetan.jpeg"
+                        alt="Mr Chetan"
+                        class="border-primary-200 dark:border-primary-700 mx-auto mb-8 h-32 w-32 rounded-full border-4 shadow-lg"
+                    />
+                    <h1 class="mb-4 text-4xl font-bold text-gray-900 md:text-6xl dark:text-white">Mr Chetan</h1>
+                    <p class="dark:text-dark-300 mb-8 text-xl text-gray-600 md:text-2xl">
+                        Software Developer from Jaipur, India
+                    </p>
+                    <div class="mb-8 flex justify-center space-x-4 drop-shadow-lg">
+                        <a href="https://www.linkedin.com/in/mr-chetan/" target="_blank">
+                            <svg class="size-6" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill="#0076B2"
+                                    d="M116 3H12v0c-4.92-.06-8.94 3.88-9 8.8v104.42 0c.07 4.9 4.09 8.83 9 8.78h104v0c4.91.03 8.93-3.9 9-8.81V11.77v0c-.09-4.9-4.11-8.81-9-8.77Z"
+                                ></path>
+                                <path
+                                    fill="#FFF"
+                                    d="M21.06 48.73h18.11V107H21.06Zm9.06-29v0c5.79 0 10.49 4.7 10.49 10.5 -.01 5.79-4.71 10.49-10.51 10.49 -5.8-.01-10.5-4.71-10.5-10.51 0-.01 0-.01 0-.01v0c0-5.8 4.7-10.5 10.5-10.49m20.41 29h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41 18.34-.04 21.74 12.03 21.74 27.68v32H88.87V78.63c0-6.75-.12-15.44-9.41-15.44 -9.29 0-10.87 7.36-10.87 15v28.79H50.51Z"
+                                ></path>
+                            </svg>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/mr-chetan" target="_blank" class="text-gray-900 dark:text-white">
+                            <svg
+                                class="size-6"
+                                fill="currentColor"
+                                viewBox="0 0 16 16"
+                                xmlns="http://www.w3.org/2000/svg"
                             >
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                                    />
-                                </svg>
-                            </a>
-                            <a
-                                href="https://github.com/mr-chetan"
-                                target="_blank"
-                                class="text-gray-600 hover:text-gray-800"
-                            >
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
-                                        clip-rule="evenodd"
-                                    />
-                                </svg>
-                            </a>
-                            <a
-                                href="https://stackoverflow.com/users/13265630/chetan"
-                                target="_blank"
-                                class="text-orange-600 hover:text-orange-800"
-                            >
-                                <svg class="size-6" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        fill="#BBB"
-                                        d="M101.072 82.51h11.37V128H10.04V82.51h11.37v34.11h79.64Z"
-                                    ></path>
-                                    <path
-                                        fill="#F58025"
-                                        d="M33.82 79.13L89.7 90.868l2.34-11.17 -55.88-11.75Zm7.39-26.75l51.76 24.1 4.82-10.35 -51.768-24.1Zm14.32-25.39l43.88 36.53 7.3-8.78 -43.89-36.53Zm28.33-27L74.69 6.8l34.08 45.802 9.16-6.81ZM32.79 105.25h56.89V93.87H32.79Z"
-                                    ></path>
-                                </svg>
-                            </a>
-                        </div>
-                        <a
-                            href="#"
-                            class="inline-block rounded-lg bg-blue-600 px-6 py-3 font-bold text-white transition duration-300 hover:bg-blue-700"
-                        >
-                            Download CV
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M7.976 0v0C3.57121.0005521.000552 3.57121 0 7.976c0 3.522 2.3 6.507 5.431 7.584 .392.049.538-.196.538-.392v-1.37c-2.201.49-2.69-1.076-2.69-1.076 -.343-.93-.881-1.175-.881-1.175 -.734-.489.048-.489.048-.489 .783.049 1.224.832 1.224.832 .734 1.223 1.859.88 2.3.685 .048-.538.293-.88.489-1.076 -1.762-.196-3.621-.881-3.621-3.964 0-.88.293-1.566.832-2.153 -.05-.147-.343-.978.098-2.055 0 0 .685-.196 2.201.832 .636-.196 1.322-.245 2.007-.245s1.37.098 2.006.245c1.517-1.027 2.202-.832 2.202-.832 .44 1.077.146 1.908.097 2.104v0c.538892.587083.836068 1.3561.832 2.153 0 3.083-1.86 3.719-3.62 3.915 .293.244.538.733.538 1.467v2.202c0 .196.146.44.538.392v0C13.8214 14.4624 16.0082 11.4087 16 7.976c-.049-4.404-3.62-7.976-8.024-7.976Z"
+                                ></path>
+                            </svg>
+                            <span class="sr-only">GitHub</span>
+                        </a>
+                        <a href="https://stackoverflow.com/users/13265630/chetan" target="_blank">
+                            <svg class="size-6" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#BCBBBB" d="M101.072 82.51h11.37V128H10.04V82.51h11.37v34.11h79.64Z"></path>
+                                <path
+                                    fill="#F58025"
+                                    d="M33.82 79.13L89.7 90.868l2.34-11.17 -55.88-11.75Zm7.39-26.75l51.76 24.1 4.82-10.35 -51.768-24.1Zm14.32-25.39l43.88 36.53 7.3-8.78 -43.89-36.53Zm28.33-27L74.69 6.8l34.08 45.802 9.16-6.81ZM32.79 105.25h56.89V93.87H32.79Z"
+                                ></path>
+                            </svg>
+                            <span class="sr-only">Stack Overflow</span>
                         </a>
                     </div>
-                </div>
-            </section>
-            <!-- Hero Section -->
-            <section class="flex min-h-1/6 items-center bg-gradient-to-br from-blue-50 to-white">
-                <div class="container mx-auto px-6 py-20">
-                    <div class="mx-auto max-w-4xl text-center">
-                        <img
-                            src="/chetan.jpeg"
-                            alt="Chetan"
-                            class="mx-auto mb-8 h-32 w-32 rounded-full border-4 border-white shadow-xl"
-                        />
-
-                        <h1 class="mb-4 text-5xl font-bold text-gray-800 md:text-6xl">Mr. Chetan</h1>
-                        <p class="mb-8 text-xl text-gray-600 md:text-2xl">Software Developer from Jaipur, India</p>
-
-                        <div class="mb-8 flex justify-center space-x-6">
-                            <a
-                                href="https://www.linkedin.com/in/mr-chetan/"
-                                target="_blank"
-                                class="text-blue-600 transition-colors hover:text-blue-800"
+                    <a
+                        href="/Chetans-CV.pdf"
+                        target="_blank"
+                        class="bg-primary-600 hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-500 inline-block rounded-lg px-6 py-3 font-bold text-white transition duration-300"
+                    >
+                        <span class="align-middle">
+                            <svg
+                                class="inline-block size-6"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
                             >
-                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                                    />
-                                </svg>
-                            </a>
-                            <a
-                                href="https://github.com/mr-chetan"
-                                target="_blank"
-                                class="text-gray-700 transition-colors hover:text-gray-900"
-                            >
-                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
-                                        clip-rule="evenodd"
-                                    />
-                                </svg>
-                            </a>
-                            <a
-                                href="https://stackoverflow.com/users/13265630/chetan"
-                                target="_blank"
-                                class="text-orange-500 transition-colors hover:text-orange-700"
-                            >
-                                <svg class="size-8" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        fill="#BBB"
-                                        d="M101.072 82.51h11.37V128H10.04V82.51h11.37v34.11h79.64Z"
-                                    ></path>
-                                    <path
-                                        fill="#F58025"
-                                        d="M33.82 79.13L89.7 90.868l2.34-11.17 -55.88-11.75Zm7.39-26.75l51.76 24.1 4.82-10.35 -51.768-24.1Zm14.32-25.39l43.88 36.53 7.3-8.78 -43.89-36.53Zm28.33-27L74.69 6.8l34.08 45.802 9.16-6.81ZM32.79 105.25h56.89V93.87H32.79Z"
-                                    ></path>
-                                </svg>
-                            </a>
-                        </div>
-
+                                <path d="M19 9h-4V3H9v6H5l7 7 7-7ZM5 18v2h14v-2H5Z"></path>
+                            </svg>
+                            Download CV
+                        </span>
+                    </a>
+                    <div class="mt-8 font-medium">
                         <a
-                            href="https://mrchetan.com/wp-content/uploads/2022/05/Chetans-CV.pdf"
-                            target="_blank"
-                            class="inline-block transform rounded-lg bg-blue-600 px-8 py-4 font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-blue-700"
+                            href="/#contact"
+                            class="text-primary-600 hover:text-primary-700 dark:text-primary-200 dark:hover:text-primary-50"
                         >
-                            DOWNLOAD CV
+                            <span class="inline-flex items-center justify-center gap-1">
+                                Contact Me
+                                <svg
+                                    class="inline-block size-5"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2L2 14Z"></path>
+                                </svg>
+                            </span>
                         </a>
-
-                        <div class="mt-8 font-medium text-blue-600">CONTACT ME</div>
                     </div>
                 </div>
             </section>
 
             <!-- About Me Section -->
-            <section class="bg-white py-20">
+            <section class="dark:bg-dark-800 bg-white py-20">
                 <div class="container mx-auto px-6">
                     <div class="mx-auto max-w-6xl">
                         <div class="mb-16 text-center">
-                            <h2 class="mb-4 text-4xl font-bold text-gray-800">About Me</h2>
-                            <p class="mx-auto max-w-3xl text-xl text-gray-600">
+                            <h2 class="mb-4 text-4xl font-bold text-gray-800 dark:text-white">About Me</h2>
+                            <p class="dark:text-dark-300 mx-auto max-w-3xl text-xl text-gray-600">
                                 Hello! I'm Chetan. Developer from Jaipur, India. I have rich experience in website
                                 development and design, also I am good at App Development. I love to talk with you about
                                 our uniqueness.
                             </p>
                         </div>
-
-                        <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-                            <div class="space-y-6">
-                                <div class="grid grid-cols-2 gap-4 text-sm">
-                                    <div>
-                                        <span class="font-semibold text-gray-800">AGE:</span>
-                                        <span class="ml-2 text-gray-600">24</span>
-                                    </div>
-                                    <div>
-                                        <span class="font-semibold text-gray-800">RESIDENCE:</span>
-                                        <span class="ml-2 text-gray-600">Jaipur</span>
-                                    </div>
-                                    <div>
-                                        <span class="font-semibold text-gray-800">FREELANCE:</span>
-                                        <span class="ml-2 text-gray-600">Available</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="font-semibold text-gray-800">ADDRESS:</span>
-                                    <p class="mt-1 text-gray-600">
-                                        26/F/105 CM Teacher and Parhari Scheme, Pratap Nagar, Sector 26, Sanganer,
-                                        Jaipur, Rajasthan 302033
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- My Services -->
+                        <div class="grid grid-cols-2 gap-4 text-sm">
                             <div>
-                                <h3 class="mb-8 text-2xl font-bold text-gray-800">My Services</h3>
-                                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div class="rounded-lg bg-blue-50 p-6 text-center">
-                                        <div class="mb-3 text-blue-600">
-                                            <svg
-                                                class="mx-auto h-12 w-12"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <h4 class="mb-2 font-bold text-gray-800">Web Development</h4>
-                                        <p class="text-sm text-gray-600">
-                                            Modern and mobile-ready website that will help you reach all of your
-                                            marketing.
-                                        </p>
-                                    </div>
-
-                                    <div class="rounded-lg bg-green-50 p-6 text-center">
-                                        <div class="mb-3 text-green-600">
-                                            <svg
-                                                class="mx-auto h-12 w-12"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <h4 class="mb-2 font-bold text-gray-800">Advertising</h4>
-                                        <p class="text-sm text-gray-600">
-                                            Advertising services include Google, Facebook, Instagram, email, and web
-                                            apps.
-                                        </p>
-                                    </div>
-
-                                    <div class="rounded-lg bg-purple-50 p-6 text-center">
-                                        <div class="mb-3 text-purple-600">
-                                            <svg
-                                                class="mx-auto h-12 w-12"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M12 18h.01M8 21h8a1 1 0 001-1v-1H7v1a1 1 0 001 1zM3 7a2 2 0 012-2h14a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <h4 class="mb-2 font-bold text-gray-800">App Development</h4>
-                                        <p class="text-sm text-gray-600">
-                                            Modern Android & iOS Application Development.
-                                        </p>
-                                    </div>
-
-                                    <div class="rounded-lg bg-red-50 p-6 text-center">
-                                        <div class="mb-3 text-red-600">
-                                            <svg
-                                                class="mx-auto h-12 w-12"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <h4 class="mb-2 font-bold text-gray-800">Video Editing</h4>
-                                        <p class="text-sm text-gray-600">
-                                            Edit Videos like professional for businesses.
-                                        </p>
-                                    </div>
-                                </div>
+                                <span class="font-semibold text-gray-800 dark:text-white">AGE:</span>
+                                <span class="dark:text-dark-300 ml-2 text-gray-600">26</span>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-gray-800 dark:text-white">RESIDENCE:</span>
+                                <span class="dark:text-dark-300 ml-2 text-gray-600">Jaipur</span>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-gray-800 dark:text-white">FREELANCE:</span>
+                                <span class="dark:text-dark-300 ml-2 text-gray-600">Available</span>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-gray-800 dark:text-white">ADDRESS:</span>
+                                <p class="dark:text-dark-300 mt-1 text-gray-600">
+                                    26/F/105 CM Teacher and Parhari Scheme, Pratap Nagar, Sector 26, Sanganer, Jaipur,
+                                    Rajasthan 302033
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Fun Facts -->
-            <section class="bg-gray-50 py-20">
+            <!-- Services Section -->
+            <section class="dark:bg-dark-900 bg-gray-50 py-20">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div class="mb-16 text-center">
+                        <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">My Services</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                        <div
+                            class="dark:bg-dark-700 dark:shadow-dark-700/50 rounded-lg bg-white p-8 text-center shadow-lg"
+                        >
+                            <div class="mb-4 text-purple-600">
+                                <svg class="mx-auto h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 18h.01M8 21h8a1 1 0 001-1v-1H7v1a1 1 0 001 1zM3 7a2 2 0 012-2h14a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"
+                                    />
+                                </svg>
+                            </div>
+                            <h3 class="mb-3 text-xl font-bold text-gray-900 dark:text-white">App Development</h3>
+                            <p class="dark:text-dark-300 text-gray-600">
+                                Modern Android & iOS Application Development.
+                            </p>
+                        </div>
+
+                        <div
+                            class="dark:bg-dark-700 dark:shadow-dark-700/50 rounded-lg bg-white p-8 text-center shadow-lg"
+                        >
+                            <div class="mb-4 text-blue-600">
+                                <svg class="mx-auto h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                                    />
+                                </svg>
+                            </div>
+                            <h3 class="mb-3 text-xl font-bold text-gray-900 dark:text-white">Web Development</h3>
+                            <p class="dark:text-dark-300 text-gray-600">
+                                Modern and mobile-ready website that will help you reach all of your marketing.
+                            </p>
+                        </div>
+
+                        <div
+                            class="dark:bg-dark-700 dark:shadow-dark-700/50 rounded-lg bg-white p-8 text-center shadow-lg"
+                        >
+                            <div class="mb-4 text-green-600">
+                                <svg class="mx-auto h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
+                                    />
+                                </svg>
+                            </div>
+                            <h3 class="mb-3 text-xl font-bold text-gray-900 dark:text-white">Advertising</h3>
+                            <p class="dark:text-dark-300 text-gray-600">
+                                Advertising services include Google, Facebook, Instagram, email, and web apps.
+                            </p>
+                        </div>
+
+                        <div
+                            class="dark:bg-dark-700 dark:shadow-dark-700/50 rounded-lg bg-white p-8 text-center shadow-lg"
+                        >
+                            <div class="mb-4 text-red-600">
+                                <svg class="mx-auto h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                                    />
+                                </svg>
+                            </div>
+                            <h3 class="mb-3 text-xl font-bold text-gray-900 dark:text-white">Video Editing</h3>
+                            <p class="dark:text-dark-300 text-gray-600">
+                                Edit Videos like professional for businesses.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Facts -->
+            <section class="dark:bg-dark-800 bg-white py-20">
                 <div class="container mx-auto px-6">
                     <div class="mx-auto max-w-4xl">
-                        <h2 class="mb-16 text-center text-4xl font-bold text-gray-800">Fun Facts</h2>
+                        <h2 class="mb-16 text-center text-4xl font-bold text-gray-800 dark:text-white">Facts</h2>
 
                         <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
                             <div class="text-center">
-                                <div class="mb-2 text-4xl font-bold text-blue-600">10000+</div>
-                                <div class="text-gray-600">Songs Listened</div>
+                                <div class="mb-2 text-4xl font-bold text-green-600">100+</div>
+                                <div class="dark:text-dark-300 text-gray-600">Projects Completed</div>
                             </div>
                             <div class="text-center">
-                                <div class="mb-2 text-4xl font-bold text-green-600">30+</div>
-                                <div class="text-gray-600">Projects Completed</div>
+                                <div class="mb-2 text-4xl font-bold text-purple-600">75+</div>
+                                <div class="dark:text-dark-300 text-gray-600">Clients</div>
                             </div>
                             <div class="text-center">
                                 <div class="mb-2 text-4xl font-bold text-yellow-600">100%</div>
-                                <div class="text-gray-600">Happy Clients</div>
+                                <div class="dark:text-dark-300 text-gray-600">Happy Clients</div>
                             </div>
                             <div class="text-center">
-                                <div class="mb-2 text-4xl font-bold text-purple-600">15+</div>
-                                <div class="text-gray-600">Clients</div>
+                                <div class="mb-2 text-4xl font-bold text-blue-600">$50K+</div>
+                                <div class="dark:text-dark-300 text-gray-600">Earned</div>
                             </div>
                         </div>
                     </div>
@@ -309,90 +254,129 @@
             </section>
 
             <!-- Resume Section -->
-            <section id="resume" class="bg-white py-20">
+            <section id="resume" class="dark:bg-dark-900 bg-gray-50 py-20">
                 <div class="container mx-auto px-6">
                     <div class="mx-auto max-w-6xl">
-                        <div class="mb-16 text-center">
-                            <h2 class="mb-4 text-4xl font-bold text-gray-800">Resume</h2>
-                        </div>
-
                         <div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
                             <!-- Experience -->
                             <div>
-                                <h3 class="mb-8 text-center text-2xl font-bold text-gray-800">EXPERIENCE</h3>
+                                <h3 class="mb-8 text-center text-2xl font-bold text-gray-800 dark:text-white">
+                                    EXPERIENCE
+                                </h3>
 
-                                <div class="space-y-8">
-                                    <div class="relative border-l-2 border-blue-200 pl-8">
-                                        <div class="absolute top-0 -left-2 h-4 w-4 rounded-full bg-blue-600"></div>
-                                        <div class="mb-1 text-sm font-semibold text-blue-600">2021 - Present</div>
-                                        <h4 class="text-lg font-bold text-gray-800">Developer</h4>
-                                        <div class="mb-2 text-gray-600">Froiden Technologies Pvt. Ltd.</div>
-                                        <p class="text-sm text-gray-700">
-                                            Work on Multiple Projects using PHP (Laravel), MySQL, Dart, HTML/CSS,
-                                            Javascript languages.
-                                        </p>
+                                <div class="border-primary-200 relative border-l-2 pb-8 pl-8">
+                                    <div
+                                        class="bg-primary-400 absolute top-0 -left-2 -ml-px h-4 w-4 rounded-full"
+                                    ></div>
+                                    <div class="text-primary-600 mb-1 text-sm font-semibold">2022 - Present</div>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">
+                                        Senior Developer, CEO, Director
+                                    </h4>
+                                    <div class="dark:text-dark-300 mb-2 text-gray-600">Devanox Private Limited</div>
+                                    <p class="dark:text-dark-300 text-sm text-gray-700">
+                                        Work on Multiple Projects using PHP (Laravel), MySQL, Dart, HTML/CSS, Javascript
+                                        languages. Working as a CEO and Director of Company. Manage Team of Developers.
+                                        Mentoring Junior Developers. Some Projects are contributed by me of Devanox Pvt
+                                        Ltd.
+                                    </p>
+                                </div>
+                                <div class="border-primary-200 relative border-l-2 pb-8 pl-8">
+                                    <div
+                                        class="bg-primary-400 absolute top-0 -left-2 -ml-px h-4 w-4 rounded-full"
+                                    ></div>
+                                    <div class="text-primary-600 mb-1 text-sm font-semibold">2021 - 2024</div>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">
+                                        Senior Software Developer
+                                    </h4>
+                                    <div class="dark:text-dark-300 mb-2 text-gray-600">
+                                        Froiden Technologies Pvt. Ltd.
                                     </div>
+                                    <p class="dark:text-dark-300 text-sm text-gray-700">
+                                        Work on Multiple Projects using Laravel, PHP, MySQL, HTML/CSS, Javascript
+                                        languages. Manage Team of Developers. Mentoring Junior Developers. Some Projects
+                                        are contributed by me are Worksuite (SAAS and Non-SAAS), Appointo Multi Vendor,
+                                        Worksuite Modules (SMS, Zoom, Google Calendar, Language Pack, Universal Bundel,
+                                        E-Invoiceing, Subdomain, Biolink, Cyber Security, Latter, QR Code, etc).
+                                    </p>
+                                </div>
 
-                                    <div class="relative border-l-2 border-blue-200 pl-8">
-                                        <div class="absolute top-0 -left-2 h-4 w-4 rounded-full bg-blue-600"></div>
-                                        <div class="mb-1 text-sm font-semibold text-blue-600">2020 - 2021</div>
-                                        <h4 class="text-lg font-bold text-gray-800">Senior Full Stack Developer</h4>
-                                        <div class="mb-2 text-gray-600">Dgenesis, Kota</div>
-                                        <p class="text-sm text-gray-700">
-                                            Work on Multiple Projects using PHP (Laravel), MySQL, Java, Dart, HTML/CSS,
-                                            Javascript languages and Manage Webservers.
-                                        </p>
-                                    </div>
+                                <div class="border-primary-200 relative border-l-2 pb-8 pl-8">
+                                    <div
+                                        class="bg-primary-400 absolute top-0 -left-2 -ml-px h-4 w-4 rounded-full"
+                                    ></div>
+                                    <div class="text-primary-600 mb-1 text-sm font-semibold">2020 - 2021</div>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">
+                                        Senior Full Stack Developer
+                                    </h4>
+                                    <div class="dark:text-dark-300 mb-2 text-gray-600">Dgenesis, Kota</div>
+                                    <p class="dark:text-dark-300 text-sm text-gray-700">
+                                        Work on Multiple Projects using Laravel, PHP, MySQL, Java, Dart, HTML/CSS,
+                                        Javascript languages and Manage Webservers.
+                                    </p>
+                                </div>
 
-                                    <div class="relative border-l-2 border-blue-200 pl-8">
-                                        <div class="absolute top-0 -left-2 h-4 w-4 rounded-full bg-blue-600"></div>
-                                        <div class="mb-1 text-sm font-semibold text-blue-600">2019 - 2020</div>
-                                        <h4 class="text-lg font-bold text-gray-800">Full Stack Developer</h4>
-                                        <div class="mb-2 text-gray-600">Numerals LLC, New York</div>
-                                        <p class="text-sm text-gray-700">
-                                            Work on Multiple Projects using PHP, MySQL, Java, HTML/CSS, Javascript
-                                            languages.
-                                        </p>
-                                    </div>
+                                <div class="border-primary-200 relative border-l-2 pb-8 pl-8">
+                                    <div
+                                        class="bg-primary-400 absolute top-0 -left-2 -ml-px h-4 w-4 rounded-full"
+                                    ></div>
+                                    <div class="text-primary-600 mb-1 text-sm font-semibold">2019 - 2020</div>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">
+                                        Full Stack Developer
+                                    </h4>
+                                    <div class="dark:text-dark-300 mb-2 text-gray-600">Numerals LLC, New York</div>
+                                    <p class="dark:text-dark-300 text-sm text-gray-700">
+                                        Work on Multiple Projects using Laravel, PHP, MySQL, HTML/CSS, Javascript
+                                        languages.
+                                    </p>
+                                </div>
 
-                                    <div class="relative border-l-2 border-blue-200 pl-8">
-                                        <div class="absolute top-0 -left-2 h-4 w-4 rounded-full bg-blue-600"></div>
-                                        <div class="mb-1 text-sm font-semibold text-blue-600">2018 - Present 2021</div>
-                                        <h4 class="text-lg font-bold text-gray-800">Freelancer</h4>
-                                        <p class="text-sm text-gray-700">
-                                            Work on Multiple Projects using PHP, MySQL, Java, Dart, HTML/CSS, Javascript
-                                            languages.
-                                        </p>
-                                    </div>
+                                <div class="border-primary-200 relative border-l-2 pb-8 pl-8">
+                                    <div
+                                        class="bg-primary-400 absolute top-0 -left-2 -ml-px h-4 w-4 rounded-full"
+                                    ></div>
+                                    <div class="text-primary-600 mb-1 text-sm font-semibold">2018 - Present</div>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">Freelancer</h4>
+                                    <p class="dark:text-dark-300 text-sm text-gray-700">
+                                        Work on Multiple Projects using Laravel, PHP, MySQL, Java, Dart, HTML/CSS,
+                                        Javascript languages.
+                                    </p>
                                 </div>
                             </div>
 
                             <!-- Education -->
                             <div>
-                                <h3 class="mb-8 text-center text-2xl font-bold text-gray-800">EDUCATION</h3>
+                                <h3 class="mb-8 text-center text-2xl font-bold text-gray-800 dark:text-white">
+                                    EDUCATION
+                                </h3>
 
-                                <div class="space-y-8">
-                                    <div class="relative border-l-2 border-green-200 pl-8">
-                                        <div class="absolute top-0 -left-2 h-4 w-4 rounded-full bg-green-600"></div>
-                                        <div class="mb-1 text-sm font-semibold text-green-600">2018 - 2020</div>
-                                        <h4 class="text-lg font-bold text-gray-800">S.S. Jain Subodh PG College</h4>
-                                        <div class="mb-2 text-gray-600">MCA</div>
-                                        <p class="text-sm text-gray-700">
-                                            Master's Degree in Computer Science from SS Jain Subodh PG (Autonomous)
-                                            College Jaipur
-                                        </p>
-                                    </div>
+                                <div class="border-primary-200 relative border-l-2 pb-8 pl-8">
+                                    <div
+                                        class="bg-primary-400 absolute top-0 -left-2 -ml-px h-4 w-4 rounded-full"
+                                    ></div>
+                                    <div class="text-primary-600 mb-1 text-sm font-semibold">2018 - 2020</div>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">
+                                        S.S. Jain Subodh PG College
+                                    </h4>
+                                    <div class="dark:text-dark-300 mb-2 text-gray-600">MCA</div>
+                                    <p class="dark:text-dark-300 text-sm text-gray-700">
+                                        Master's Degree in Computer Science from SS Jain Subodh PG (Autonomous) College
+                                        Jaipur
+                                    </p>
+                                </div>
 
-                                    <div class="relative border-l-2 border-green-200 pl-8">
-                                        <div class="absolute top-0 -left-2 h-4 w-4 rounded-full bg-green-600"></div>
-                                        <div class="mb-1 text-sm font-semibold text-green-600">2015 - 2018</div>
-                                        <h4 class="text-lg font-bold text-gray-800">S.S. Jain Subodh PG College</h4>
-                                        <div class="mb-2 text-gray-600">BCA</div>
-                                        <p class="text-sm text-gray-700">
-                                            Bachelor's Degree in Computer Science from SS Jain Subodh PG (Autonomous)
-                                            College Jaipur
-                                        </p>
-                                    </div>
+                                <div class="border-primary-200 relative border-l-2 pb-8 pl-8">
+                                    <div
+                                        class="bg-primary-400 absolute top-0 -left-2 -ml-px h-4 w-4 rounded-full"
+                                    ></div>
+                                    <div class="text-primary-600 mb-1 text-sm font-semibold">2015 - 2018</div>
+                                    <h4 class="text-lg font-bold text-gray-800 dark:text-white">
+                                        S.S. Jain Subodh PG College
+                                    </h4>
+                                    <div class="dark:text-dark-300 mb-2 text-gray-600">BCA</div>
+                                    <p class="dark:text-dark-300 text-sm text-gray-700">
+                                        Bachelor's Degree in Computer Science from SS Jain Subodh PG (Autonomous)
+                                        College Jaipur
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -401,55 +385,71 @@
             </section>
 
             <!-- Skills Section -->
-            <section class="bg-gray-50 py-20">
+            <section class="dark:bg-dark-800 bg-white py-20">
                 <div class="container mx-auto px-6">
                     <div class="mx-auto max-w-6xl">
                         <div class="mb-16 text-center">
-                            <h2 class="mb-4 text-4xl font-bold text-gray-800">Skills</h2>
+                            <h2 class="mb-4 text-4xl font-bold text-gray-800 dark:text-white">Skills</h2>
                         </div>
 
                         <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
                             <!-- Coding Skills -->
                             <div>
-                                <h3 class="mb-6 text-center text-xl font-bold text-gray-800">CODING</h3>
+                                <h3 class="mb-6 text-center text-xl font-bold text-gray-800 dark:text-white">CODING</h3>
                                 <div class="space-y-4">
                                     <div>
                                         <div class="mb-2 flex justify-between">
-                                            <span class="text-sm font-medium text-gray-700">PHP / MYSQL</span>
-                                            <span class="text-sm font-medium text-gray-700">90%</span>
+                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
+                                                PHP / MYSQL
+                                            </span>
+                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
+                                                90%
+                                            </span>
                                         </div>
-                                        <div class="h-2 rounded-full bg-gray-200">
-                                            <div class="h-2 rounded-full bg-blue-600" style="width: 90%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="mb-2 flex justify-between">
-                                            <span class="text-sm font-medium text-gray-700">Flutter / Dart</span>
-                                            <span class="text-sm font-medium text-gray-700">85%</span>
-                                        </div>
-                                        <div class="h-2 rounded-full bg-gray-200">
-                                            <div class="h-2 rounded-full bg-blue-600" style="width: 85%"></div>
+                                        <div class="dark:bg-dark-600 h-2 rounded-full bg-gray-200">
+                                            <div class="bg-primary-400 h-2 rounded-full" style="width: 90%"></div>
                                         </div>
                                     </div>
 
                                     <div>
                                         <div class="mb-2 flex justify-between">
-                                            <span class="text-sm font-medium text-gray-700">HTML / CSS</span>
-                                            <span class="text-sm font-medium text-gray-700">95%</span>
+                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
+                                                Flutter / Dart
+                                            </span>
+                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
+                                                85%
+                                            </span>
                                         </div>
-                                        <div class="h-2 rounded-full bg-gray-200">
-                                            <div class="h-2 rounded-full bg-blue-600" style="width: 95%"></div>
+                                        <div class="dark:bg-dark-600 h-2 rounded-full bg-gray-200">
+                                            <div class="bg-primary-400 h-2 rounded-full" style="width: 85%"></div>
                                         </div>
                                     </div>
 
                                     <div>
                                         <div class="mb-2 flex justify-between">
-                                            <span class="text-sm font-medium text-gray-700">WordPress</span>
-                                            <span class="text-sm font-medium text-gray-700">70%</span>
+                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
+                                                HTML / CSS
+                                            </span>
+                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
+                                                95%
+                                            </span>
                                         </div>
-                                        <div class="h-2 rounded-full bg-gray-200">
-                                            <div class="h-2 rounded-full bg-blue-600" style="width: 70%"></div>
+                                        <div class="dark:bg-dark-600 h-2 rounded-full bg-gray-200">
+                                            <div class="bg-primary-400 h-2 rounded-full" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="mb-2 flex justify-between">
+                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
+                                                WordPress
+                                            </span>
+                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
+                                                70%
+                                            </span>
+                                        </div>
+                                        <div class="dark:bg-dark-600 h-2 rounded-full bg-gray-200">
+                                            <div class="bg-primary-400 h-2 rounded-full" style="width: 70%"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -457,38 +457,40 @@
 
                             <!-- Knowledge -->
                             <div>
-                                <h3 class="mb-6 text-center text-xl font-bold text-gray-800">KNOWLEDGE</h3>
-                                <ul class="space-y-3 text-sm text-gray-700">
+                                <h3 class="mb-6 text-center text-xl font-bold text-gray-800 dark:text-white">
+                                    KNOWLEDGE
+                                </h3>
+                                <ul class="dark:text-dark-300 space-y-3 text-sm text-gray-700">
                                     <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-blue-600"></div>
+                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
                                         Website hosting
                                     </li>
                                     <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-blue-600"></div>
+                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
                                         iOS and android apps
                                     </li>
                                     <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-blue-600"></div>
+                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
                                         Create logo design
                                     </li>
                                     <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-blue-600"></div>
+                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
                                         Modern and mobile-ready
                                     </li>
                                     <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-blue-600"></div>
+                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
                                         Advertising services include
                                     </li>
                                     <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-blue-600"></div>
+                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
                                         Graphics and animations
                                     </li>
                                     <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-blue-600"></div>
+                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
                                         Search engine marketing
                                     </li>
                                     <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-blue-600"></div>
+                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
                                         Ethical Hacking
                                     </li>
                                 </ul>
@@ -496,8 +498,8 @@
 
                             <!-- Design & Languages -->
                             <div>
-                                <h3 class="mb-6 text-center text-xl font-bold text-gray-800">DESIGN</h3>
-                                <ul class="mb-8 space-y-3 text-sm text-gray-700">
+                                <h3 class="mb-6 text-center text-xl font-bold text-gray-800 dark:text-white">DESIGN</h3>
+                                <ul class="dark:text-dark-300 mb-8 space-y-3 text-sm text-gray-700">
                                     <li class="flex items-center">
                                         <div class="mr-3 h-2 w-2 rounded-full bg-green-600"></div>
                                         Web Design
@@ -516,8 +518,10 @@
                                     </li>
                                 </ul>
 
-                                <h3 class="mb-6 text-center text-xl font-bold text-gray-800">LANGUAGES</h3>
-                                <ul class="space-y-3 text-sm text-gray-700">
+                                <h3 class="mb-6 text-center text-xl font-bold text-gray-800 dark:text-white">
+                                    LANGUAGES
+                                </h3>
+                                <ul class="dark:text-dark-300 space-y-3 text-sm text-gray-700">
                                     <li class="flex items-center">
                                         <div class="mr-3 h-2 w-2 rounded-full bg-purple-600"></div>
                                         Hindi
@@ -534,444 +538,242 @@
             </section>
 
             <!-- Testimonials Section -->
-            <section class="bg-white py-20">
+            <section class="dark:bg-dark-900 bg-gray-50 py-20">
                 <div class="container mx-auto px-6">
                     <div class="mx-auto max-w-6xl">
                         <div class="mb-16 text-center">
-                            <h2 class="mb-4 text-4xl font-bold text-gray-800">Testimonials</h2>
+                            <h2 class="mb-4 text-4xl font-bold text-gray-800 dark:text-white">Testimonials</h2>
                         </div>
 
                         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                            <div class="rounded-lg bg-gray-50 p-6">
-                                <p class="mb-4 text-sm text-gray-700 italic">
+                            <div class="dark:bg-dark-700 rounded-lg bg-white p-6 shadow">
+                                <p class="dark:text-dark-300 mb-4 text-sm text-gray-700 italic">
                                     "Awesome services. If you're looking for a quick and serious solution, visit this
                                     guy. He gave me a perfect example of what i needed. Thank you very much. Great job!"
                                 </p>
                                 <div class="flex items-center">
                                     <img
-                                        src="https://mrchetan.com/wp-content/uploads/2021/03/primusvekuh-92x92.jpeg"
+                                        src="/public/images/clients/primusvekuh.jpeg"
                                         alt="primusvekuh"
                                         class="mr-3 h-10 w-10 rounded-full"
                                     />
                                     <div>
-                                        <div class="text-sm font-semibold text-gray-800">primusvekuh</div>
-                                        <div class="text-xs text-gray-600">Fiverr Client</div>
+                                        <div class="text-sm font-semibold text-gray-800 dark:text-white">
+                                            primusvekuh
+                                        </div>
+                                        <div class="dark:text-dark-300 text-xs text-gray-600">Fiverr Client</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="rounded-lg bg-gray-50 p-6">
-                                <p class="mb-4 text-sm text-gray-700 italic">
+                            <div class="dark:bg-dark-700 rounded-lg bg-white p-6 shadow">
+                                <p class="dark:text-dark-300 mb-4 text-sm text-gray-700 italic">
                                     "He understood the issue and scenario very well and he fixed the issue in short term
-                                    itself. Highly recommendable guy."
+                                    itself. Highly recommandable guy."
                                 </p>
                                 <div class="flex items-center">
                                     <img
-                                        src="https://mrchetan.com/wp-content/uploads/2021/03/user-92x92.png"
+                                        src="/public/images/clients/user.png"
                                         alt="peterbrowne954"
                                         class="mr-3 h-10 w-10 rounded-full"
                                     />
                                     <div>
-                                        <div class="text-sm font-semibold text-gray-800">peterbrowne954</div>
-                                        <div class="text-xs text-gray-600">Fiverr Client</div>
+                                        <div class="text-sm font-semibold text-gray-800 dark:text-white">
+                                            peterbrowne954
+                                        </div>
+                                        <div class="dark:text-dark-300 text-xs text-gray-600">Fiverr Client</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="rounded-lg bg-gray-50 p-6">
-                                <p class="mb-4 text-sm text-gray-700 italic">
+                            <div class="dark:bg-dark-700 rounded-lg bg-white p-6 shadow">
+                                <p class="dark:text-dark-300 mb-4 text-sm text-gray-700 italic">
                                     "Professional and patient. thcbindia is willing to understand the needs of the job
                                     and follow through to get it done in a timely manner. Highly recommended."
                                 </p>
                                 <div class="flex items-center">
                                     <img
-                                        src="https://mrchetan.com/wp-content/uploads/2021/03/Asset_-_BDM_Stars_profile_picture-92x92.jpg"
+                                        src="/public/images/clients/rickywcpoon-BDM-Stars.jpg"
                                         alt="rickywcpoon"
                                         class="mr-3 h-10 w-10 rounded-full"
                                     />
                                     <div>
-                                        <div class="text-sm font-semibold text-gray-800">rickywcpoon</div>
-                                        <div class="text-xs text-gray-600">Fiverr Client</div>
+                                        <div class="text-sm font-semibold text-gray-800 dark:text-white">
+                                            rickywcpoon
+                                        </div>
+                                        <div class="dark:text-dark-300 text-xs text-gray-600">Fiverr Client</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="rounded-lg bg-gray-50 p-6">
-                                <p class="mb-4 text-sm text-gray-700 italic">
+                            <div class="dark:bg-dark-700 rounded-lg bg-white p-6 shadow">
+                                <p class="dark:text-dark-300 mb-4 text-sm text-gray-700 italic">
                                     "He fast and active person, I had an issue with wordpress bitnami on Google Cloud
                                     hosting, I was stuck in the issue since 5 days, and could not retrieve the
                                     solutions, this guy with in 3 hours finish all done. Happy to work with him."
                                 </p>
                                 <div class="flex items-center">
                                     <img
-                                        src="https://mrchetan.com/wp-content/uploads/2021/03/06e8216c-88ce-4de1-a8aa-e11c6c97bcb6-92x92.jpg"
+                                        src="/public/images/clients/alirashidpk.jpg"
                                         alt="alirashidpk"
                                         class="mr-3 h-10 w-10 rounded-full"
                                     />
                                     <div>
-                                        <div class="text-sm font-semibold text-gray-800">alirashidpk</div>
-                                        <div class="text-xs text-gray-600">Fiverr Client</div>
+                                        <div class="text-sm font-semibold text-gray-800 dark:text-white">
+                                            alirashidpk
+                                        </div>
+                                        <div class="dark:text-dark-300 text-xs text-gray-600">Fiverr Client</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="rounded-lg bg-gray-50 p-6">
-                                <p class="mb-4 text-sm text-gray-700 italic">
-                                    "Amazing work, very knowledgeable with AWS, WordPress and Bitnami. I think its the
+                            <div class="dark:bg-dark-700 rounded-lg bg-white p-6 shadow">
+                                <p class="dark:text-dark-300 mb-4 text-sm text-gray-700 italic">
+                                    "Amazing work, very knowledgable with AWS, Wordpress and Bitnami. I think its the
                                     4th time I'm using this seller's services on a variety of maintenance and bug fixes.
-                                    Super knowledgeable, super-fast, really happy with this guy 🙂"
+                                    Super knowledgeable, super-fast, really happy with this guy :)"
                                 </p>
                                 <div class="flex items-center">
                                     <img
-                                        src="https://mrchetan.com/wp-content/uploads/2021/03/user-92x92.png"
+                                        src="/public/images/clients/user.png"
                                         alt="videomakingorg"
                                         class="mr-3 h-10 w-10 rounded-full"
                                     />
                                     <div>
-                                        <div class="text-sm font-semibold text-gray-800">videomakingorg</div>
-                                        <div class="text-xs text-gray-600">Fiverr Client</div>
+                                        <div class="text-sm font-semibold text-gray-800 dark:text-white">
+                                            videomakingorg
+                                        </div>
+                                        <div class="dark:text-dark-300 text-xs text-gray-600">Fiverr Client</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="rounded-lg bg-gray-50 p-6">
-                                <p class="mb-4 text-sm text-gray-700 italic">
-                                    "very happy, he helped me solve problems which probably took me day without his
-                                    help. I can recommend 100% his gigs. He delivered within 1h which is really amazing.
+                            <div class="dark:bg-dark-700 rounded-lg bg-white p-6 shadow">
+                                <p class="dark:text-dark-300 mb-4 text-sm text-gray-700 italic">
+                                    "very happy, he helped me solve problems whice probably took me day without his
+                                    help. I can recomand 100% his gigs. He delivered within 1h which is really amazing.
                                     Thank you and I wish you all the best in the future."
                                 </p>
                                 <div class="flex items-center">
                                     <img
-                                        src="https://mrchetan.com/wp-content/uploads/2021/03/e620152f-646c-4732-ab3d-1bb563219abd-92x92.jpg"
+                                        src="/public/images/clients/annalocko.jpg"
                                         alt="annalocko"
                                         class="mr-3 h-10 w-10 rounded-full"
                                     />
                                     <div>
-                                        <div class="text-sm font-semibold text-gray-800">annalocko</div>
-                                        <div class="text-xs text-gray-600">Fiverr Client</div>
+                                        <div class="text-sm font-semibold text-gray-800 dark:text-white">annalocko</div>
+                                        <div class="dark:text-dark-300 text-xs text-gray-600">Fiverr Client</div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <!-- About Section -->
-            <section id="about" class="bg-white py-20">
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div class="mb-16 text-center">
-                        <h2 class="mb-4 text-4xl font-bold text-gray-900">About Me</h2>
-                        <p class="text-xl text-gray-600">
-                            Developer from Jaipur, India. I have rich experience in website development and design, also
-                            I am good at App Development.
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-                        <div>
-                            <p class="mb-8 text-lg leading-relaxed text-gray-700">
-                                Hello! I'm Chetan. Developer from Jaipur, India. I have rich experience in website
-                                development and design, also I am good at App Development. I love to talk with you about
-                                our uniqueness.
-                            </p>
-
-                            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-                                <div>
-                                    <p class="text-gray-600"><span class="font-semibold">AGE:</span> 24</p>
-                                    <p class="text-gray-600"><span class="font-semibold">RESIDENCE:</span> Jaipur</p>
-                                    <p class="text-gray-600"><span class="font-semibold">FREELANCE:</span> Available</p>
-                                    <p class="text-gray-600">
-                                        <span class="font-semibold">ADDRESS:</span> 26/F/105 CM Teacher and Parhari
-                                        Scheme, Pratap Nagar, Sector 26, Sanganer, Jaipur, Rajasthan 302033
-                                    </p>
+                            <div class="dark:bg-dark-700 rounded-lg bg-white p-6 shadow">
+                                <p class="dark:text-dark-300 mb-4 text-sm text-gray-700 italic">
+                                    "Excellent! Helped me with everything and went out of the way to sort my issue!"
+                                </p>
+                                <div class="flex items-center">
+                                    <img
+                                        src="/public/images/clients/chinmaytam.jpg"
+                                        alt="chinmaytam"
+                                        class="mr-3 h-10 w-10 rounded-full"
+                                    />
+                                    <div>
+                                        <div class="text-sm font-semibold text-gray-800 dark:text-white">
+                                            chinmaytam
+                                        </div>
+                                        <div class="dark:text-dark-300 text-xs text-gray-600">Fiverr Client</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="grid grid-cols-2 gap-6">
-                            <div class="rounded-lg bg-blue-50 p-6 text-center">
-                                <div class="mb-2 text-3xl font-bold text-blue-600">10000+</div>
-                                <div class="text-gray-600">Songs Listened</div>
-                            </div>
-                            <div class="rounded-lg bg-green-50 p-6 text-center">
-                                <div class="mb-2 text-3xl font-bold text-green-600">30+</div>
-                                <div class="text-gray-600">Projects Completed</div>
-                            </div>
-                            <div class="rounded-lg bg-yellow-50 p-6 text-center">
-                                <div class="mb-2 text-3xl font-bold text-yellow-600">100%</div>
-                                <div class="text-gray-600">Happy Clients</div>
-                            </div>
-                            <div class="rounded-lg bg-purple-50 p-6 text-center">
-                                <div class="mb-2 text-3xl font-bold text-purple-600">15+</div>
-                                <div class="text-gray-600">Clients</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Services Section -->
-            <section class="bg-gray-50 py-20">
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div class="mb-16 text-center">
-                        <h2 class="mb-4 text-4xl font-bold text-gray-900">My Services</h2>
-                    </div>
-
-                    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-                        <div class="rounded-lg bg-white p-8 text-center shadow-lg">
-                            <div class="mb-4 text-blue-600">
-                                <svg class="mx-auto h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                            <div class="dark:bg-dark-700 rounded-lg bg-white p-6 shadow">
+                                <p class="dark:text-dark-300 mb-4 text-sm text-gray-700 italic">
+                                    "very quick delivery. will definitely use in the future too."
+                                </p>
+                                <div class="flex items-center">
+                                    <img
+                                        src="/public/images/clients/user.png"
+                                        alt="nitinmvc"
+                                        class="mr-3 h-10 w-10 rounded-full"
                                     />
-                                </svg>
+                                    <div>
+                                        <div class="text-sm font-semibold text-gray-800 dark:text-white">nitinmvc</div>
+                                        <div class="dark:text-dark-300 text-xs text-gray-600">Fiverr Client</div>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="mb-3 text-xl font-bold text-gray-900">Web Development</h3>
-                            <p class="text-gray-600">
-                                Modern and mobile-ready website that will help you reach all of your marketing.
-                            </p>
-                        </div>
 
-                        <div class="rounded-lg bg-white p-8 text-center shadow-lg">
-                            <div class="mb-4 text-green-600">
-                                <svg class="mx-auto h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
+                            <div class="dark:bg-dark-700 rounded-lg bg-white p-6 shadow">
+                                <p class="dark:text-dark-300 mb-4 text-sm text-gray-700 italic">
+                                    "Excellent website developer. Highly recommended!!!"
+                                </p>
+                                <div class="flex items-center">
+                                    <img
+                                        src="/public/images/clients/user.png"
+                                        alt="mariosgeorgi183"
+                                        class="mr-3 h-10 w-10 rounded-full"
                                     />
-                                </svg>
+                                    <div>
+                                        <div class="text-sm font-semibold text-gray-800 dark:text-white">
+                                            mariosgeorgi183
+                                        </div>
+                                        <div class="dark:text-dark-300 text-xs text-gray-600">Fiverr Client</div>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="mb-3 text-xl font-bold text-gray-900">Advertising</h3>
-                            <p class="text-gray-600">
-                                Advertising services include Google, Facebook, Instagram, email, and web apps.
-                            </p>
-                        </div>
 
-                        <div class="rounded-lg bg-white p-8 text-center shadow-lg">
-                            <div class="mb-4 text-purple-600">
-                                <svg class="mx-auto h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M12 18h.01M8 21h8a1 1 0 001-1v-1H7v1a1 1 0 001 1zM3 7a2 2 0 012-2h14a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"
+                            <div class="dark:bg-dark-700 rounded-lg bg-white p-6 shadow">
+                                <p class="dark:text-dark-300 mb-4 text-sm text-gray-700 italic">
+                                    "Service delivered as described, Speedy Transaction. Thanks, AAAA++++"
+                                </p>
+                                <div class="flex items-center">
+                                    <img
+                                        src="/public/images/clients/user.png"
+                                        alt="mbakara630"
+                                        class="mr-3 h-10 w-10 rounded-full"
                                     />
-                                </svg>
+                                    <div>
+                                        <div class="text-sm font-semibold text-gray-800 dark:text-white">
+                                            mbakara630
+                                        </div>
+                                        <div class="dark:text-dark-300 text-xs text-gray-600">Fiverr Client</div>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="mb-3 text-xl font-bold text-gray-900">App Development</h3>
-                            <p class="text-gray-600">Modern Android & iOS Application Development.</p>
-                        </div>
-
-                        <div class="rounded-lg bg-white p-8 text-center shadow-lg">
-                            <div class="mb-4 text-red-600">
-                                <svg class="mx-auto h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                                    />
-                                </svg>
-                            </div>
-                            <h3 class="mb-3 text-xl font-bold text-gray-900">Video Editing</h3>
-                            <p class="text-gray-600">Edit Videos like professional for businesses.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Quote Section -->
-            <section class="bg-blue-600 py-20 text-white">
+            <section class="bg-primary-300 dark:bg-primary-600 py-20 text-white">
                 <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
                     <blockquote class="mb-8 text-2xl font-light italic md:text-3xl">
                         "Any fool can write code that a computer can understand. Good programmers write code that humans
                         can understand."
                     </blockquote>
                     <div class="flex items-center justify-center">
-                        <img src="/chetan.jpeg" alt="Chetan" class="mr-4 h-12 w-12 rounded-full" />
+                        <img src="/public/chetan.jpeg" alt="Chetan" class="mr-4 h-12 w-12 rounded-full" />
                         <div class="text-left">
                             <div class="font-semibold">Chetan</div>
-                            <div class="text-blue-200">Developer</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Resume Section -->
-            <section id="resume" class="bg-white py-20">
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div class="mb-16 text-center">
-                        <h2 class="mb-4 text-4xl font-bold text-gray-900">Resume</h2>
-                    </div>
-
-                    <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
-                        <!-- Experience -->
-                        <div>
-                            <h3 class="mb-8 text-2xl font-bold text-gray-900">Experience</h3>
-
-                            <div class="space-y-8">
-                                <div class="border-l-4 border-blue-500 pl-6">
-                                    <div class="text-sm font-semibold text-blue-600">2021 - Present</div>
-                                    <h4 class="text-xl font-bold text-gray-900">Developer</h4>
-                                    <div class="mb-2 text-gray-600">Froiden Technologies Pvt. Ltd.</div>
-                                    <p class="text-gray-700">
-                                        Work on Multiple Projects using PHP (Laravel), MySQL, Dart, HTML/CSS, Javascript
-                                        languages.
-                                    </p>
-                                </div>
-
-                                <div class="border-l-4 border-blue-500 pl-6">
-                                    <div class="text-sm font-semibold text-blue-600">2020 - 2021</div>
-                                    <h4 class="text-xl font-bold text-gray-900">Senior Full Stack Developer</h4>
-                                    <div class="mb-2 text-gray-600">Dgenesis, Kota</div>
-                                    <p class="text-gray-700">
-                                        Work on Multiple Projects using PHP (Laravel), MySQL, Java, Dart, HTML/CSS,
-                                        Javascript languages and Manage Webservers.
-                                    </p>
-                                </div>
-
-                                <div class="border-l-4 border-blue-500 pl-6">
-                                    <div class="text-sm font-semibold text-blue-600">2019 - 2020</div>
-                                    <h4 class="text-xl font-bold text-gray-900">Full Stack Developer</h4>
-                                    <div class="mb-2 text-gray-600">Numerals LLC, New York</div>
-                                    <p class="text-gray-700">
-                                        Work on Multiple Projects using PHP, MySQL, Java, HTML/CSS, Javascript
-                                        languages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Education -->
-                        <div>
-                            <h3 class="mb-8 text-2xl font-bold text-gray-900">Education</h3>
-
-                            <div class="space-y-8">
-                                <div class="border-l-4 border-green-500 pl-6">
-                                    <div class="text-sm font-semibold text-green-600">2018 - 2020</div>
-                                    <h4 class="text-xl font-bold text-gray-900">MCA</h4>
-                                    <div class="mb-2 text-gray-600">S.S. Jain Subodh PG College</div>
-                                    <p class="text-gray-700">
-                                        Master's Degree in Computer Science from SS Jain Subodh PG (Autonomous) College
-                                        Jaipur
-                                    </p>
-                                </div>
-
-                                <div class="border-l-4 border-green-500 pl-6">
-                                    <div class="text-sm font-semibold text-green-600">2015 - 2018</div>
-                                    <h4 class="text-xl font-bold text-gray-900">BCA</h4>
-                                    <div class="mb-2 text-gray-600">S.S. Jain Subodh PG College</div>
-                                    <p class="text-gray-700">
-                                        Bachelor's Degree in Computer Science from SS Jain Subodh PG (Autonomous)
-                                        College Jaipur
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Skills Section -->
-                    <div class="mt-20">
-                        <h3 class="mb-8 text-center text-2xl font-bold text-gray-900">Skills</h3>
-
-                        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                            <!-- Coding Skills -->
-                            <div>
-                                <h4 class="mb-4 text-lg font-semibold text-gray-900">Coding</h4>
-                                <div class="space-y-3">
-                                    <div>
-                                        <div class="mb-1 flex justify-between">
-                                            <span class="text-sm text-gray-700">PHP / MySQL</span>
-                                            <span class="text-sm text-gray-700">90%</span>
-                                        </div>
-                                        <div class="h-2 rounded-full bg-gray-200">
-                                            <div class="h-2 rounded-full bg-blue-600" style="width: 90%"></div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="mb-1 flex justify-between">
-                                            <span class="text-sm text-gray-700">Flutter / Dart</span>
-                                            <span class="text-sm text-gray-700">85%</span>
-                                        </div>
-                                        <div class="h-2 rounded-full bg-gray-200">
-                                            <div class="h-2 rounded-full bg-blue-600" style="width: 85%"></div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="mb-1 flex justify-between">
-                                            <span class="text-sm text-gray-700">HTML / CSS</span>
-                                            <span class="text-sm text-gray-700">95%</span>
-                                        </div>
-                                        <div class="h-2 rounded-full bg-gray-200">
-                                            <div class="h-2 rounded-full bg-blue-600" style="width: 95%"></div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="mb-1 flex justify-between">
-                                            <span class="text-sm text-gray-700">WordPress</span>
-                                            <span class="text-sm text-gray-700">70%</span>
-                                        </div>
-                                        <div class="h-2 rounded-full bg-gray-200">
-                                            <div class="h-2 rounded-full bg-blue-600" style="width: 70%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Knowledge -->
-                            <div>
-                                <h4 class="mb-4 text-lg font-semibold text-gray-900">Knowledge</h4>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• Website hosting</li>
-                                    <li>• iOS and android apps</li>
-                                    <li>• Create logo design</li>
-                                    <li>• Modern and mobile-ready</li>
-                                    <li>• Advertising services include</li>
-                                    <li>• Graphics and animations</li>
-                                    <li>• Search engine marketing</li>
-                                    <li>• Ethical Hacking</li>
-                                </ul>
-                            </div>
-
-                            <!-- Design & Languages -->
-                            <div>
-                                <h4 class="mb-4 text-lg font-semibold text-gray-900">Design</h4>
-                                <ul class="mb-6 space-y-2 text-gray-700">
-                                    <li>• Web Design</li>
-                                    <li>• Photoshop</li>
-                                    <li>• Graphic Design</li>
-                                    <li>• Video Editing</li>
-                                </ul>
-
-                                <h4 class="mb-4 text-lg font-semibold text-gray-900">Languages</h4>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• Hindi</li>
-                                    <li>• English</li>
-                                </ul>
-                            </div>
+                            <div class="text-primary-100">Developer</div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Get in Touch Section -->
-            <section id="contact" class="bg-gray-50 py-20">
+            <section id="contact" class="dark:bg-dark-800 bg-gray-50 py-20">
                 <div class="container mx-auto px-6">
                     <div class="mx-auto max-w-6xl">
                         <div class="mb-16 text-center">
-                            <h2 class="mb-4 text-4xl font-bold text-gray-800">Get in Touch</h2>
+                            <h2 class="mb-4 text-4xl font-bold text-gray-800 dark:text-white">Get in Touch</h2>
                         </div>
 
                         <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
                             <div class="space-y-8">
                                 <div class="flex items-start">
-                                    <div class="mt-1 mr-4 rounded-full bg-blue-600 p-3 text-white">
+                                    <div class="bg-primary-500 mt-1 mr-4 rounded-full p-3 text-white">
                                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path
                                                 stroke-linecap="round"
@@ -982,13 +784,13 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <span class="font-semibold text-gray-800">EMAIL:</span>
-                                        <p class="mt-1 text-gray-600">contact@mrchetan.com</p>
+                                        <span class="font-semibold text-gray-800 dark:text-white">EMAIL:</span>
+                                        <p class="dark:text-dark-300 mt-1 text-gray-600">contact@mrchetan.com</p>
                                     </div>
                                 </div>
 
                                 <div class="flex items-start">
-                                    <div class="mt-1 mr-4 rounded-full bg-blue-600 p-3 text-white">
+                                    <div class="bg-primary-500 mt-1 mr-4 rounded-full p-3 text-white">
                                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path
                                                 stroke-linecap="round"
@@ -999,13 +801,13 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <span class="font-semibold text-gray-800">PHONE:</span>
-                                        <p class="mt-1 text-gray-600">+91-9460053140</p>
+                                        <span class="font-semibold text-gray-800 dark:text-white">PHONE:</span>
+                                        <p class="dark:text-dark-300 mt-1 text-gray-600">+91-9460053140</p>
                                     </div>
                                 </div>
 
                                 <div class="flex items-start">
-                                    <div class="mt-1 mr-4 rounded-full bg-blue-600 p-3 text-white">
+                                    <div class="bg-primary-500 mt-1 mr-4 rounded-full p-3 text-white">
                                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path
                                                 stroke-linecap="round"
@@ -1022,8 +824,8 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <span class="font-semibold text-gray-800">ADDRESS:</span>
-                                        <p class="mt-1 text-gray-600">
+                                        <span class="font-semibold text-gray-800 dark:text-white">ADDRESS:</span>
+                                        <p class="dark:text-dark-300 mt-1 text-gray-600">
                                             26/F/105 CM Teacher and Parhari Scheme, Pratap Nagar, Sector 26, Sanganer,
                                             Jaipur, Rajasthan 302033
                                         </p>
@@ -1031,16 +833,18 @@
                                 </div>
 
                                 <div class="text-center lg:text-left">
-                                    <p class="mb-4 text-gray-600">
+                                    <p class="dark:text-dark-300 mb-4 text-gray-600">
                                         For a quick contact scan the QR code to get all my info
                                     </p>
-                                    <div class="inline-block rounded-lg bg-white p-4 shadow-lg">
+                                    <div
+                                        class="dark:bg-dark-700 inline-block rounded-lg bg-white p-4 shadow-lg dark:shadow-gray-700/50"
+                                    >
                                         <div
-                                            class="flex size-48 items-center justify-center rounded-lg bg-gray-200 p-1"
+                                            class="dark:bg-dark-600 flex size-48 items-center justify-center rounded-lg bg-gray-200 p-1"
                                         >
-                                            <span class="text-sm text-gray-500">
+                                            <span class="dark:text-dark-400 text-sm text-gray-500">
                                                 <img
-                                                    src="/ChetanQr.png"
+                                                    src="/public/ChetanQr.png"
                                                     alt="Chetan"
                                                     class="mx-auto h-full w-full rounded-md"
                                                 />
@@ -1050,50 +854,79 @@
                                 </div>
                             </div>
 
-                            <div class="rounded-lg bg-white p-8 shadow-lg">
-                                <form x-data="contactForm()" @submit.prevent="submitForm()">
+                            <div class="dark:bg-dark-800 rounded-lg bg-white p-8 shadow-lg dark:shadow-gray-700/50">
+                                <form
+                                    x-data="{
+                                        form: {
+                                            name: '',
+                                            email: '',
+                                            phone: '',
+                                            message: '',
+                                        },
+                                        submitForm() {
+                                            // Handle form submission
+                                            alert('Thank you for your message! I will get back to you soon.');
+                                            // Reset form
+                                            this.form = {
+                                                name: '',
+                                                email: '',
+                                                phone: '',
+                                                message: '',
+                                            };
+                                        },
+                                    }"
+                                    @submit.prevent="submitForm()"
+                                >
                                     <div class="mb-6">
-                                        <label class="mb-2 block text-sm font-medium text-gray-700">Name</label>
+                                        <label class="dark:text-dark-300 mb-2 block text-sm font-medium text-gray-700">
+                                            Name
+                                        </label>
                                         <input
                                             type="text"
                                             x-model="form.name"
                                             required
-                                            class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                                            class="focus:border-primary-500 focus:ring-primary-500 dark:bg-dark-700 w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 dark:border-gray-600 dark:text-white"
                                         />
                                     </div>
                                     <div class="mb-6">
-                                        <label class="mb-2 block text-sm font-medium text-gray-700">Email</label>
+                                        <label class="dark:text-dark-300 mb-2 block text-sm font-medium text-gray-700">
+                                            Email
+                                        </label>
                                         <input
                                             type="email"
                                             x-model="form.email"
                                             required
-                                            class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                                            class="focus:border-primary-500 focus:ring-primary-500 dark:bg-dark-700 w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 dark:border-gray-600 dark:text-white"
                                         />
                                     </div>
 
                                     <div class="mb-6">
-                                        <label class="mb-2 block text-sm font-medium text-gray-700">Phone</label>
+                                        <label class="dark:text-dark-300 mb-2 block text-sm font-medium text-gray-700">
+                                            Phone
+                                        </label>
                                         <input
                                             type="tel"
                                             x-model="form.phone"
                                             required
-                                            class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                                            class="focus:border-primary-500 focus:ring-primary-500 dark:bg-dark-700 w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 dark:border-gray-600 dark:text-white"
                                         />
                                     </div>
 
                                     <div class="mb-6">
-                                        <label class="mb-2 block text-sm font-medium text-gray-700">Message</label>
+                                        <label class="dark:text-dark-300 mb-2 block text-sm font-medium text-gray-700">
+                                            Message
+                                        </label>
                                         <textarea
                                             x-model="form.message"
                                             rows="5"
                                             required
-                                            class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                                            class="focus:border-primary-500 focus:ring-primary-500 dark:bg-dark-700 w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 dark:border-gray-600 dark:text-white"
                                         ></textarea>
                                     </div>
 
                                     <button
                                         type="submit"
-                                        class="w-full rounded-lg bg-blue-600 px-6 py-3 font-bold text-white transition duration-300 hover:bg-blue-700"
+                                        class="bg-primary-500 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-400 w-full rounded-lg px-6 py-3 font-bold text-white transition duration-300"
                                     >
                                         Send Message
                                     </button>
@@ -1105,34 +938,7 @@
             </section>
         </main>
 
-        <load src="src/html/partials/footer.html" />
-        <load src="src/html/partials/foot.html" />
-
-        <script type="module" src="src/js/app.js"></script>
-
-        <script>
-            // Alpine.js component for contact form
-            function contactForm() {
-                return {
-                    form: {
-                        name: '',
-                        email: '',
-                        phone: '',
-                        message: '',
-                    },
-                    submitForm() {
-                        // Handle form submission
-                        alert('Thank you for your message! I will get back to you soon.');
-                        // Reset form
-                        this.form = {
-                            name: '',
-                            email: '',
-                            phone: '',
-                            message: '',
-                        };
-                    },
-                };
-            }
-        </script>
+        <load src="/src/html/partials/footer.html" />
+        <load src="/src/html/partials/foot.html" />
     </body>
 </html>

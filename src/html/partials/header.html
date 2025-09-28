@@ -1,39 +1,41 @@
 <!-- Navigation -->
 <header class="sticky top-0 z-50">
-    <nav class="w-full bg-white shadow-lg" x-data="{ mobileMenuOpen: false }">
+    <nav class="dark:bg-dark-950 dark:shadow-dark-900 w-full bg-white shadow-lg" x-data="{ mobileMenuOpen: false }">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
-                <a href="/"
-                    ><div class="flex flex-shrink-0 items-center space-x-1">
-                        <img src="/chetan.jpeg" alt="Chetan" class="size-12 rounded-sm shadow-lg" />
-                        <h1 class="text-2xl font-bold text-gray-900">Chetan</h1>
-                    </div>
-                </a>
+                <div class="flex flex-shrink-0 items-center space-x-1">
+                    <a href="/">
+                        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Mr Chetan</h1>
+                    </a>
+                </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
+                    <div class="ml-10 flex items-center space-x-4">
                         <a
                             href="/#about"
-                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
+                            class="dark:text-dark-300 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 dark:hover:text-white"
                             >About</a
                         >
                         <a
                             href="/#resume"
-                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
+                            class="dark:text-dark-300 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 dark:hover:text-white"
                             >Resume</a
                         >
                         <a
                             href="/#contact"
-                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
+                            class="dark:text-dark-300 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 dark:hover:text-white"
                             >Contact</a
                         >
                     </div>
                 </div>
 
                 <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-600 hover:text-gray-900">
+                <div class="flex items-center space-x-2 md:hidden">
+                    <button
+                        @click="mobileMenuOpen = !mobileMenuOpen"
+                        class="dark:text-dark-300 text-gray-600 hover:text-gray-900 dark:hover:text-white"
+                    >
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path
                                 stroke-linecap="round"
@@ -47,21 +49,21 @@
             </div>
 
             <!-- Mobile Menu -->
-            <div x-show="mobileMenuOpen" class="md:hidden">
-                <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+            <div x-show="mobileMenuOpen" class="-mx-6 md:hidden">
+                <div class="dark:bg-dark-800 space-y-1 px-2 pt-2 pb-3 sm:px-3">
                     <a
                         href="#about"
-                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900"
+                        class="dark:text-dark-300 block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 dark:hover:text-white"
                         >About</a
                     >
                     <a
                         href="#resume"
-                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900"
+                        class="dark:text-dark-300 block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 dark:hover:text-white"
                         >Resume</a
                     >
                     <a
                         href="#contact"
-                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900"
+                        class="dark:text-dark-300 block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 dark:hover:text-white"
                         >Contact</a
                     >
                 </div>
