@@ -65,6 +65,14 @@
         scroll-behavior: smooth;
     }
 
+    /* Optimize font rendering */
+    body {
+        font-display: swap;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
     /* Apply scrollbar styling to common scrollable elements */
     * {
         &::-webkit-scrollbar {
@@ -81,6 +89,19 @@
         }
         .dark &::-webkit-scrollbar-thumb {
             @apply bg-primary-400;
+        }
+    }
+
+    /* Improve loading state for images */
+    img {
+        max-width: 100%;
+        height: auto;
+        &[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s;
+            &.loaded {
+                opacity: 1;
+            }
         }
     }
 }

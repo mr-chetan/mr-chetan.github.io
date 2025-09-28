@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mrchetan.com/sitemap.xml
+
+# Cache directories
+Disallow: /*.log$
+
+# Allow CSS and JS files
+Allow: *.css
+Allow: *.js
+Allow: *.ico
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+Allow: *.pdf
+
+# Crawl delay (be nice to servers)
+Crawl-delay: 1

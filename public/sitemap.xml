@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://mrchetan.com/</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://mrchetan.com/chetan.jpeg</image:loc>
+            <image:title>Mr Chetan - Software Developer</image:title>
+            <image:caption>Professional software developer from Jaipur, India</image:caption>
+        </image:image>
+    </url>
+
+    <!-- About Section -->
+    <url>
+        <loc>https://mrchetan.com/#about</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Projects Section -->
+    <url>
+        <loc>https://mrchetan.com/#projects</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Resume Section -->
+    <url>
+        <loc>https://mrchetan.com/#resume</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Contact Section -->
+    <url>
+        <loc>https://mrchetan.com/#contact</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Privacy Policy -->
+    <url>
+        <loc>https://mrchetan.com/privacy/</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Terms & Conditions -->
+    <url>
+        <loc>https://mrchetan.com/terms/</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Refund Policy -->
+    <url>
+        <loc>https://mrchetan.com/refund/</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- CV Download -->
+    <url>
+        <loc>https://mrchetan.com/Chetans-CV.pdf</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+</urlset>

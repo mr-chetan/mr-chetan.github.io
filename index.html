@@ -3,12 +3,31 @@
     <head>
         <load src="/src/html/partials/head.html" />
         <title>Mr Chetan - Software Developer</title>
-        <!-- Link css -->
+        <meta
+            name="description"
+            content="Mr Chetan - Professional Software Developer from Jaipur, India. Expert in Laravel, PHP, Flutter/Dart, Web Development, Mobile Apps, WordPress, and Video Editing. 100+ projects completed with 75+ satisfied clients."
+        />
+        <!-- Open Graph Meta Tags -->
+        <meta
+            property="og:description"
+            content="Professional Software Developer specializing in Laravel, PHP, Flutter/Dart, and modern web technologies. 100+ projects completed with expertise in web development, mobile apps, and digital solutions."
+        />
+
+        <meta
+            property="og:description"
+            content="Professional Software Developer specializing in Laravel, PHP, Flutter/Dart, and modern web technologies. 100+ projects completed with expertise in web development, mobile apps, and digital solutions."
+        />
+
+        <meta name="twitter:title" content="Mr Chetan - Software Developer from Jaipur, India" />
+        <meta
+            name="twitter:description"
+            content="Professional Software Developer specializing in Laravel, PHP, Flutter/Dart, and modern web technologies. 100+ projects completed."
+        />
     </head>
 
     <body class="bg-dark-50 dark:bg-dark-800 min-h-screen antialiased transition-all duration-200" x-data>
         <load src="/src/html/partials/header.html" />
-        <main class="">
+        <main role="main" class="">
             <!-- Hero Section -->
             <section
                 id="about"
@@ -17,10 +36,99 @@
                 <div class="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8">
                     <img
                         src="/public/chetan.jpeg"
-                        alt="Mr Chetan"
+                        alt="Mr Chetan - Professional Software Developer"
                         class="border-primary-200 dark:border-primary-700 mx-auto mb-8 h-32 w-32 rounded-full border-4 shadow-lg"
+                        loading="eager"
+                        decoding="async"
                     />
                     <h1 class="mb-4 text-4xl font-bold text-gray-900 md:text-6xl dark:text-white">Mr Chetan</h1>
+                    <span
+                        x-data="{
+                            texts: [
+                                'Laravel Developer',
+                                'Flutter Developer',
+                                'PHP Developer',
+                                'Full Stack Developer',
+                                'App Developer',
+                                'Web Designer',
+                                'Freelancer'
+                            ],
+                            current: 0,
+                            display: '',
+                            isTyping: false,
+                            isErasing: false,
+                            typeSpeed: 50,
+                            eraseSpeed: 50,
+                            pause: 2000,
+                            timeoutId: null,
+
+                            clearCurrentTimeout() {
+                                if (this.timeoutId) {
+                                    clearTimeout(this.timeoutId);
+                                    this.timeoutId = null;
+                                }
+                            },
+
+                            typeText() {
+                                if (this.isTyping || this.isErasing) return;
+
+                                this.isTyping = true;
+                                this.isErasing = false;
+
+                                const text = this.texts[this.current];
+                                let charIndex = 0;
+
+                                const type = () => {
+                                    if (charIndex < text.length) {
+                                        this.display = text.substring(0, charIndex + 1);
+                                        charIndex++;
+                                        this.timeoutId = setTimeout(type, this.typeSpeed);
+                                    } else {
+                                        this.isTyping = false;
+                                        this.timeoutId = setTimeout(() => this.eraseText(), this.pause);
+                                    }
+                                };
+
+                                this.display = '';
+                                type();
+                            },
+
+                            eraseText() {
+                                if (this.isErasing || this.isTyping) return;
+
+                                this.isErasing = true;
+                                this.isTyping = false;
+
+                                const text = this.display;
+                                let charIndex = text.length;
+
+                                const erase = () => {
+                                    if (charIndex > 0) {
+                                        charIndex--;
+                                        this.display = text.substring(0, charIndex);
+                                        this.timeoutId = setTimeout(erase, this.eraseSpeed);
+                                    } else {
+                                        this.isErasing = false;
+                                        this.current = (this.current + 1) % this.texts.length;
+                                        this.timeoutId = setTimeout(() => this.typeText(), 300);
+                                    }
+                                };
+
+                                erase();
+                            },
+
+                            init() {
+                                this.typeText();
+                            },
+
+                            destroy() {
+                                this.clearCurrentTimeout();
+                            }
+                        }"
+                        x-init="init()"
+                        class="text-primary-600 dark:text-primary-400 mb-4 block min-h-[2.5rem] text-2xl font-semibold transition-all duration-300"
+                        x-text="display"
+                    ></span>
                     <p class="dark:text-dark-300 mb-8 text-xl text-gray-600 md:text-2xl">
                         Software Developer from Jaipur, India
                     </p>
@@ -241,7 +349,7 @@
                                 <div class="dark:text-dark-300 text-gray-600">Clients</div>
                             </div>
                             <div class="text-center">
-                                <div class="mb-2 text-4xl font-bold text-yellow-600">100%</div>
+                                <div class="mb-2 text-4xl font-bold text-yellow-700">100%</div>
                                 <div class="dark:text-dark-300 text-gray-600">Happy Clients</div>
                             </div>
                             <div class="text-center">
@@ -554,8 +662,10 @@
                                 <div class="flex items-center">
                                     <img
                                         src="/public/images/clients/primusvekuh.jpeg"
-                                        alt="primusvekuh"
+                                        alt="Profile photo of primusvekuh, a satisfied Fiverr client"
                                         class="mr-3 h-10 w-10 rounded-full"
+                                        loading="eager"
+                                        decoding="async"
                                     />
                                     <div>
                                         <div class="text-sm font-semibold text-gray-800 dark:text-white">
@@ -574,8 +684,10 @@
                                 <div class="flex items-center">
                                     <img
                                         src="/public/images/clients/user.png"
-                                        alt="peterbrowne954"
+                                        alt="Default profile photo."
                                         class="mr-3 h-10 w-10 rounded-full"
+                                        loading="eager"
+                                        decoding="async"
                                     />
                                     <div>
                                         <div class="text-sm font-semibold text-gray-800 dark:text-white">
@@ -594,8 +706,10 @@
                                 <div class="flex items-center">
                                     <img
                                         src="/public/images/clients/rickywcpoon-BDM-Stars.jpg"
-                                        alt="rickywcpoon"
+                                        alt="Profile photo of rickywcpoon, a satisfied Fiverr client"
                                         class="mr-3 h-10 w-10 rounded-full"
+                                        loading="eager"
+                                        decoding="async"
                                     />
                                     <div>
                                         <div class="text-sm font-semibold text-gray-800 dark:text-white">
@@ -615,8 +729,10 @@
                                 <div class="flex items-center">
                                     <img
                                         src="/public/images/clients/alirashidpk.jpg"
-                                        alt="alirashidpk"
+                                        alt="Profile photo of alirashidpk, a satisfied Fiverr client"
                                         class="mr-3 h-10 w-10 rounded-full"
+                                        loading="eager"
+                                        decoding="async"
                                     />
                                     <div>
                                         <div class="text-sm font-semibold text-gray-800 dark:text-white">
@@ -636,8 +752,10 @@
                                 <div class="flex items-center">
                                     <img
                                         src="/public/images/clients/user.png"
-                                        alt="videomakingorg"
+                                        alt="Default profile photo."
                                         class="mr-3 h-10 w-10 rounded-full"
+                                        loading="eager"
+                                        decoding="async"
                                     />
                                     <div>
                                         <div class="text-sm font-semibold text-gray-800 dark:text-white">
@@ -657,8 +775,10 @@
                                 <div class="flex items-center">
                                     <img
                                         src="/public/images/clients/annalocko.jpg"
-                                        alt="annalocko"
+                                        alt="Profile photo of annalocko, a satisfied Fiverr client"
                                         class="mr-3 h-10 w-10 rounded-full"
+                                        loading="eager"
+                                        decoding="async"
                                     />
                                     <div>
                                         <div class="text-sm font-semibold text-gray-800 dark:text-white">annalocko</div>
@@ -674,8 +794,10 @@
                                 <div class="flex items-center">
                                     <img
                                         src="/public/images/clients/chinmaytam.jpg"
-                                        alt="chinmaytam"
+                                        alt="Profile photo of chinmaytam, a satisfied Fiverr client"
                                         class="mr-3 h-10 w-10 rounded-full"
+                                        loading="eager"
+                                        decoding="async"
                                     />
                                     <div>
                                         <div class="text-sm font-semibold text-gray-800 dark:text-white">
@@ -693,8 +815,10 @@
                                 <div class="flex items-center">
                                     <img
                                         src="/public/images/clients/user.png"
-                                        alt="nitinmvc"
+                                        alt="Default profile photo."
                                         class="mr-3 h-10 w-10 rounded-full"
+                                        loading="eager"
+                                        decoding="async"
                                     />
                                     <div>
                                         <div class="text-sm font-semibold text-gray-800 dark:text-white">nitinmvc</div>
@@ -710,8 +834,10 @@
                                 <div class="flex items-center">
                                     <img
                                         src="/public/images/clients/user.png"
-                                        alt="mariosgeorgi183"
+                                        alt="Default profile photo."
                                         class="mr-3 h-10 w-10 rounded-full"
+                                        loading="eager"
+                                        decoding="async"
                                     />
                                     <div>
                                         <div class="text-sm font-semibold text-gray-800 dark:text-white">
@@ -729,8 +855,10 @@
                                 <div class="flex items-center">
                                     <img
                                         src="/public/images/clients/user.png"
-                                        alt="mbakara630"
+                                        alt="Default profile photo."
                                         class="mr-3 h-10 w-10 rounded-full"
+                                        loading="eager"
+                                        decoding="async"
                                     />
                                     <div>
                                         <div class="text-sm font-semibold text-gray-800 dark:text-white">
@@ -746,7 +874,7 @@
             </section>
 
             <!-- Quote Section -->
-            <section class="bg-primary-300 dark:bg-primary-600 py-20 text-white">
+            <section class="bg-primary-400 dark:bg-primary-600 py-20 text-white">
                 <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
                     <blockquote class="mb-8 text-2xl font-light italic md:text-3xl">
                         "Any fool can write code that a computer can understand. Good programmers write code that humans
@@ -855,82 +983,7 @@
                             </div>
 
                             <div class="dark:bg-dark-800 rounded-lg bg-white p-8 shadow-lg dark:shadow-gray-700/50">
-                                <form
-                                    x-data="{
-                                        form: {
-                                            name: '',
-                                            email: '',
-                                            phone: '',
-                                            message: '',
-                                        },
-                                        submitForm() {
-                                            // Handle form submission
-                                            alert('Thank you for your message! I will get back to you soon.');
-                                            // Reset form
-                                            this.form = {
-                                                name: '',
-                                                email: '',
-                                                phone: '',
-                                                message: '',
-                                            };
-                                        },
-                                    }"
-                                    @submit.prevent="submitForm()"
-                                >
-                                    <div class="mb-6">
-                                        <label class="dark:text-dark-300 mb-2 block text-sm font-medium text-gray-700">
-                                            Name
-                                        </label>
-                                        <input
-                                            type="text"
-                                            x-model="form.name"
-                                            required
-                                            class="focus:border-primary-500 focus:ring-primary-500 dark:bg-dark-700 w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 dark:border-gray-600 dark:text-white"
-                                        />
-                                    </div>
-                                    <div class="mb-6">
-                                        <label class="dark:text-dark-300 mb-2 block text-sm font-medium text-gray-700">
-                                            Email
-                                        </label>
-                                        <input
-                                            type="email"
-                                            x-model="form.email"
-                                            required
-                                            class="focus:border-primary-500 focus:ring-primary-500 dark:bg-dark-700 w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 dark:border-gray-600 dark:text-white"
-                                        />
-                                    </div>
-
-                                    <div class="mb-6">
-                                        <label class="dark:text-dark-300 mb-2 block text-sm font-medium text-gray-700">
-                                            Phone
-                                        </label>
-                                        <input
-                                            type="tel"
-                                            x-model="form.phone"
-                                            required
-                                            class="focus:border-primary-500 focus:ring-primary-500 dark:bg-dark-700 w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 dark:border-gray-600 dark:text-white"
-                                        />
-                                    </div>
-
-                                    <div class="mb-6">
-                                        <label class="dark:text-dark-300 mb-2 block text-sm font-medium text-gray-700">
-                                            Message
-                                        </label>
-                                        <textarea
-                                            x-model="form.message"
-                                            rows="5"
-                                            required
-                                            class="focus:border-primary-500 focus:ring-primary-500 dark:bg-dark-700 w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 dark:border-gray-600 dark:text-white"
-                                        ></textarea>
-                                    </div>
-
-                                    <button
-                                        type="submit"
-                                        class="bg-primary-500 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-400 w-full rounded-lg px-6 py-3 font-bold text-white transition duration-300"
-                                    >
-                                        Send Message
-                                    </button>
-                                </form>
+                                <load src="/src/html/partials/contact-form.html" />
                             </div>
                         </div>
                     </div>

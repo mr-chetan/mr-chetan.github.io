@@ -1,0 +1,75 @@
+{
+    "name": "Mr Chetan - Software Developer",
+    "short_name": "Mr Chetan",
+    "description": "Professional Software Developer from Jaipur, India specializing in Laravel, PHP, Flutter/Dart, and modern web technologies",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#273895",
+    "orientation": "portrait-primary",
+    "categories": ["productivity", "developer", "portfolio"],
+    "lang": "en-US",
+    "icons": [
+        {
+            "src": "/chetan.jpeg",
+            "sizes": "192x192",
+            "type": "image/jpeg",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/chetan.jpeg",
+            "sizes": "512x512",
+            "type": "image/jpeg",
+            "purpose": "any maskable"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "View Projects",
+            "short_name": "Projects",
+            "description": "Browse featured development projects",
+            "url": "/#projects",
+            "icons": [
+                {
+                    "src": "/chetan.jpeg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Contact Me",
+            "short_name": "Contact",
+            "description": "Get in touch for collaboration",
+            "url": "/#contact",
+            "icons": [
+                {
+                    "src": "/chetan.jpeg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Download CV",
+            "short_name": "CV",
+            "description": "Download resume/CV",
+            "url": "/Chetans-CV.pdf",
+            "icons": [
+                {
+                    "src": "/chetan.jpeg",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/chetan.jpeg",
+            "type": "image/jpeg",
+            "sizes": "1280x720",
+            "form_factor": "wide",
+            "label": "Portfolio homepage"
+        }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false
+}
