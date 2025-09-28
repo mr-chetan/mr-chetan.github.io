@@ -51,7 +51,7 @@
         {
             "name": "Download CV",
             "short_name": "CV",
-            "description": "Download resume/CV",
+            "description": "Download CV",
             "url": "/Chetans-CV.pdf",
             "icons": [
                 {

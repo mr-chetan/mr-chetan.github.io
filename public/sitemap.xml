@@ -31,9 +31,9 @@
         <priority>0.9</priority>
     </url>
 
-    <!-- Resume Section -->
+    <!-- CV Section -->
     <url>
-        <loc>https://mrchetan.com/#resume</loc>
+        <loc>https://mrchetan.com/#cv</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
