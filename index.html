@@ -493,152 +493,310 @@
             </section>
 
             <!-- Skills Section -->
-            <section class="dark:bg-dark-800 bg-white py-20">
-                <div class="container mx-auto px-6">
-                    <div class="mx-auto max-w-6xl">
-                        <div class="mb-16 text-center">
-                            <h2 class="mb-4 text-4xl font-bold text-gray-800 dark:text-white">Skills</h2>
+            <section id="skills" class="dark:bg-dark-800 relative overflow-hidden bg-white py-24">
+                <div class="pointer-events-none absolute inset-0 opacity-40 dark:opacity-30">
+                    <div
+                        class="from-primary-200 via-primary-300 to-primary-400 dark:from-primary-700 dark:via-primary-600 dark:to-primary-500 absolute -top-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-br blur-3xl"
+                    ></div>
+                    <div
+                        class="absolute -right-32 -bottom-32 h-96 w-96 rounded-full bg-gradient-to-tr from-purple-200 via-pink-200 to-orange-200 blur-3xl dark:from-purple-800 dark:via-fuchsia-700 dark:to-orange-600"
+                    ></div>
+                </div>
+                <div class="relative container mx-auto px-6">
+                    <div class="mx-auto max-w-7xl">
+                        <div class="mb-20 text-center">
+                            <span
+                                class="bg-primary-100 text-primary-700 dark:bg-primary-500/10 dark:text-primary-300 inline-block rounded-full px-4 py-1 text-xs font-semibold tracking-wider"
+                                >WHAT I DO BEST</span
+                            >
+                            <h2
+                                class="mt-6 mb-4 text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl dark:text-white"
+                            >
+                                Skills & Expertise
+                            </h2>
+                            <p
+                                class="dark:text-dark-300 mx-auto max-w-3xl text-base font-medium text-gray-600 md:text-lg"
+                            >
+                                A blend of engineering precision, product thinking and aesthetic craft. Constantly
+                                learning, always shipping.
+                            </p>
                         </div>
 
-                        <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
-                            <!-- Coding Skills -->
-                            <div>
-                                <h3 class="mb-6 text-center text-xl font-bold text-gray-800 dark:text-white">CODING</h3>
-                                <div class="space-y-4">
-                                    <div>
-                                        <div class="mb-2 flex justify-between">
-                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
-                                                PHP / MYSQL
-                                            </span>
-                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
-                                                90%
-                                            </span>
-                                        </div>
-                                        <div class="dark:bg-dark-600 h-2 rounded-full bg-gray-200">
-                                            <div class="bg-primary-400 h-2 rounded-full" style="width: 90%"></div>
-                                        </div>
+                        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+                            <!-- Coding -->
+                            <div
+                                class="group dark:border-dark-600/60 dark:bg-dark-700/60 relative flex flex-col rounded-2xl border border-gray-200/70 bg-white/70 p-6 shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                            >
+                                <div class="mb-5 flex items-center gap-3">
+                                    <div
+                                        class="from-primary-500 to-primary-400 shadow-primary-500/30 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-tr text-white shadow-lg"
+                                    >
+                                        <svg
+                                            class="h-6 w-6"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M8 21h8m-6-4h4m-7 4h10a2 2 0 002-2V7a2 2 0 00-1-1.732L13 2.268a2 2 0 00-2 0L5 5.268A2 2 0 004 7v12a2 2 0 002 2z"
+                                            />
+                                        </svg>
                                     </div>
-
-                                    <div>
-                                        <div class="mb-2 flex justify-between">
-                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
-                                                Flutter / Dart
-                                            </span>
-                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
-                                                85%
-                                            </span>
-                                        </div>
-                                        <div class="dark:bg-dark-600 h-2 rounded-full bg-gray-200">
-                                            <div class="bg-primary-400 h-2 rounded-full" style="width: 85%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="mb-2 flex justify-between">
-                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
-                                                HTML / CSS
-                                            </span>
-                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
-                                                95%
-                                            </span>
-                                        </div>
-                                        <div class="dark:bg-dark-600 h-2 rounded-full bg-gray-200">
-                                            <div class="bg-primary-400 h-2 rounded-full" style="width: 95%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="mb-2 flex justify-between">
-                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
-                                                WordPress
-                                            </span>
-                                            <span class="dark:text-dark-300 text-sm font-medium text-gray-700">
-                                                70%
-                                            </span>
-                                        </div>
-                                        <div class="dark:bg-dark-600 h-2 rounded-full bg-gray-200">
-                                            <div class="bg-primary-400 h-2 rounded-full" style="width: 70%"></div>
-                                        </div>
-                                    </div>
+                                    <h3 class="text-lg font-bold tracking-wide text-gray-900 dark:text-white">
+                                        Coding
+                                    </h3>
                                 </div>
+                                <ul class="space-y-5">
+                                    <li class="space-y-2">
+                                        <div
+                                            class="dark:text-dark-300 flex items-center justify-between text-xs font-semibold tracking-wider text-gray-600 uppercase"
+                                        >
+                                            <span>PHP / MySQL</span><span>90%</span>
+                                        </div>
+                                        <div
+                                            class="dark:bg-dark-600 h-2 w-full overflow-hidden rounded-full bg-gray-200"
+                                        >
+                                            <div
+                                                class="from-primary-500 to-primary-400 h-2 rounded-full bg-gradient-to-r"
+                                                style="width: 90%"
+                                                aria-label="PHP and MySQL proficiency 90 percent"
+                                            ></div>
+                                        </div>
+                                    </li>
+                                    <li class="space-y-2">
+                                        <div
+                                            class="dark:text-dark-300 flex items-center justify-between text-xs font-semibold tracking-wider text-gray-600 uppercase"
+                                        >
+                                            <span>Flutter / Dart</span><span>85%</span>
+                                        </div>
+                                        <div
+                                            class="dark:bg-dark-600 h-2 w-full overflow-hidden rounded-full bg-gray-200"
+                                        >
+                                            <div
+                                                class="h-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-pink-500"
+                                                style="width: 85%"
+                                                aria-label="Flutter and Dart proficiency 85 percent"
+                                            ></div>
+                                        </div>
+                                    </li>
+                                    <li class="space-y-2">
+                                        <div
+                                            class="dark:text-dark-300 flex items-center justify-between text-xs font-semibold tracking-wider text-gray-600 uppercase"
+                                        >
+                                            <span>HTML / CSS</span><span>95%</span>
+                                        </div>
+                                        <div
+                                            class="dark:bg-dark-600 h-2 w-full overflow-hidden rounded-full bg-gray-200"
+                                        >
+                                            <div
+                                                class="h-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-400"
+                                                style="width: 95%"
+                                                aria-label="HTML and CSS proficiency 95 percent"
+                                            ></div>
+                                        </div>
+                                    </li>
+                                    <li class="space-y-2">
+                                        <div
+                                            class="dark:text-dark-300 flex items-center justify-between text-xs font-semibold tracking-wider text-gray-600 uppercase"
+                                        >
+                                            <span>WordPress</span><span>70%</span>
+                                        </div>
+                                        <div
+                                            class="dark:bg-dark-600 h-2 w-full overflow-hidden rounded-full bg-gray-200"
+                                        >
+                                            <div
+                                                class="h-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500"
+                                                style="width: 70%"
+                                                aria-label="WordPress proficiency 70 percent"
+                                            ></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div
+                                    class="group-hover:ring-primary-400/50 pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent transition"
+                                ></div>
                             </div>
 
                             <!-- Knowledge -->
-                            <div>
-                                <h3 class="mb-6 text-center text-xl font-bold text-gray-800 dark:text-white">
-                                    KNOWLEDGE
-                                </h3>
-                                <ul class="dark:text-dark-300 space-y-3 text-sm text-gray-700">
-                                    <li class="flex items-center">
-                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
-                                        Website hosting
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
-                                        iOS and android apps
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
-                                        Create logo design
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
-                                        Modern and mobile-ready
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
-                                        Advertising services include
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
-                                        Graphics and animations
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
-                                        Search engine marketing
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="bg-primary-500 mr-3 h-2 w-2 rounded-full"></div>
-                                        Ethical Hacking
-                                    </li>
-                                </ul>
+                            <div
+                                class="group dark:border-dark-600/60 dark:bg-dark-700/60 relative flex flex-col rounded-2xl border border-gray-200/70 bg-white/70 p-6 shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                            >
+                                <div class="mb-5 flex items-center gap-3">
+                                    <div
+                                        class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-500 to-cyan-400 text-white shadow-lg shadow-indigo-500/30"
+                                    >
+                                        <svg
+                                            class="h-6 w-6"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M12 20.25c4.556 0 8.25-3.694 8.25-8.25S16.556 3.75 12 3.75 3.75 7.444 3.75 12c0 2.101.764 4.023 2.033 5.5L4.5 21l3.77-1.232A8.207 8.207 0 0012 20.25z"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-bold tracking-wide text-gray-900 dark:text-white">
+                                        Knowledge
+                                    </h3>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="dark:from-dark-600 dark:to-dark-500 dark:text-dark-200 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 px-3 py-1 text-xs font-semibold text-gray-700 shadow-sm select-none"
+                                        >Website Hosting</span
+                                    >
+                                    <span
+                                        class="dark:from-dark-600 dark:to-dark-500 dark:text-dark-200 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 px-3 py-1 text-xs font-semibold text-gray-700 shadow-sm select-none"
+                                        >iOS & Android Apps</span
+                                    >
+                                    <span
+                                        class="dark:from-dark-600 dark:to-dark-500 dark:text-dark-200 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 px-3 py-1 text-xs font-semibold text-gray-700 shadow-sm select-none"
+                                        >Logo Design</span
+                                    >
+                                    <span
+                                        class="dark:from-dark-600 dark:to-dark-500 dark:text-dark-200 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 px-3 py-1 text-xs font-semibold text-gray-700 shadow-sm select-none"
+                                        >Mobile‑Ready UI</span
+                                    >
+                                    <span
+                                        class="dark:from-dark-600 dark:to-dark-500 dark:text-dark-200 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 px-3 py-1 text-xs font-semibold text-gray-700 shadow-sm select-none"
+                                        >Advertising</span
+                                    >
+                                    <span
+                                        class="dark:from-dark-600 dark:to-dark-500 dark:text-dark-200 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 px-3 py-1 text-xs font-semibold text-gray-700 shadow-sm select-none"
+                                        >Graphics & Animation</span
+                                    >
+                                    <span
+                                        class="dark:from-dark-600 dark:to-dark-500 dark:text-dark-200 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 px-3 py-1 text-xs font-semibold text-gray-700 shadow-sm select-none"
+                                        >Search Marketing</span
+                                    >
+                                    <span
+                                        class="dark:from-dark-600 dark:to-dark-500 dark:text-dark-200 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 px-3 py-1 text-xs font-semibold text-gray-700 shadow-sm select-none"
+                                        >Ethical Hacking</span
+                                    >
+                                </div>
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent transition group-hover:ring-indigo-400/50"
+                                ></div>
                             </div>
 
-                            <!-- Design & Languages -->
-                            <div>
-                                <h3 class="mb-6 text-center text-xl font-bold text-gray-800 dark:text-white">DESIGN</h3>
-                                <ul class="dark:text-dark-300 mb-8 space-y-3 text-sm text-gray-700">
-                                    <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-green-600"></div>
-                                        Web Design
+                            <!-- Design -->
+                            <div
+                                class="group dark:border-dark-600/60 dark:bg-dark-700/60 relative flex flex-col rounded-2xl border border-gray-200/70 bg-white/70 p-6 shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                            >
+                                <div class="mb-5 flex items-center gap-3">
+                                    <div
+                                        class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-500 to-lime-400 text-white shadow-lg shadow-emerald-500/30"
+                                    >
+                                        <svg
+                                            class="h-6 w-6"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M4 7h16M4 12h8m-8 5h16"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-bold tracking-wide text-gray-900 dark:text-white">
+                                        Design
+                                    </h3>
+                                </div>
+                                <ul class="dark:text-dark-300 space-y-3 text-sm font-medium text-gray-600">
+                                    <li class="flex items-center gap-2">
+                                        <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>Web Design
                                     </li>
-                                    <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-green-600"></div>
-                                        Photoshop
+                                    <li class="flex items-center gap-2">
+                                        <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>Photoshop
                                     </li>
-                                    <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-green-600"></div>
-                                        Graphic Design
+                                    <li class="flex items-center gap-2">
+                                        <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>Graphic
+                                        Design
                                     </li>
-                                    <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-green-600"></div>
-                                        Video Editing
+                                    <li class="flex items-center gap-2">
+                                        <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>Video
+                                        Editing
                                     </li>
                                 </ul>
+                                <div class="mt-6 flex flex-1 flex-col justify-end">
+                                    <p class="dark:text-dark-400 text-xs tracking-wider text-gray-400 uppercase">
+                                        Craft • Iterate • Refine
+                                    </p>
+                                </div>
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent transition group-hover:ring-emerald-400/50"
+                                ></div>
+                            </div>
 
-                                <h3 class="mb-6 text-center text-xl font-bold text-gray-800 dark:text-white">
-                                    LANGUAGES
-                                </h3>
-                                <ul class="dark:text-dark-300 space-y-3 text-sm text-gray-700">
-                                    <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-purple-600"></div>
-                                        Hindi
+                            <!-- Languages -->
+                            <div
+                                class="group dark:border-dark-600/60 dark:bg-dark-700/60 relative flex flex-col rounded-2xl border border-gray-200/70 bg-white/70 p-6 shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                            >
+                                <div class="mb-5 flex items-center gap-3">
+                                    <div
+                                        class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-tr from-violet-500 to-purple-400 text-white shadow-lg shadow-violet-500/30"
+                                    >
+                                        <svg
+                                            class="h-6 w-6"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M12 3c2.755 2.828 5.51 4.242 8.265 4.242-.552 5.657-3.86 9.9-8.265 12.728C7.735 17.142 4.427 12.899 3.735 7.242 6.49 7.242 9.245 5.828 12 3z"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-bold tracking-wide text-gray-900 dark:text-white">
+                                        Languages
+                                    </h3>
+                                </div>
+                                <ul class="dark:text-dark-300 space-y-4 text-sm font-medium text-gray-600">
+                                    <li
+                                        class="dark:bg-dark-600/70 flex items-center justify-between rounded-lg bg-gray-100 px-3 py-2"
+                                    >
+                                        <span class="flex items-center gap-2"
+                                            ><span class="inline-block h-2 w-2 rounded-full bg-purple-500"></span
+                                            >Hindi</span
+                                        >
+                                        <span
+                                            class="rounded-md bg-purple-500/10 px-2 py-0.5 text-xs font-semibold text-purple-600 dark:text-purple-300"
+                                            >Native</span
+                                        >
                                     </li>
-                                    <li class="flex items-center">
-                                        <div class="mr-3 h-2 w-2 rounded-full bg-purple-600"></div>
-                                        English
+                                    <li
+                                        class="dark:bg-dark-600/70 flex items-center justify-between rounded-lg bg-gray-100 px-3 py-2"
+                                    >
+                                        <span class="flex items-center gap-2"
+                                            ><span class="inline-block h-2 w-2 rounded-full bg-purple-500"></span
+                                            >English</span
+                                        >
+                                        <span
+                                            class="rounded-md bg-purple-500/10 px-2 py-0.5 text-xs font-semibold text-purple-600 dark:text-purple-300"
+                                            >Fluent</span
+                                        >
                                     </li>
                                 </ul>
+                                <div class="mt-6 flex flex-1 flex-col justify-end">
+                                    <p class="dark:text-dark-400 text-xs tracking-wider text-gray-400 uppercase">
+                                        Communication • Clarity • Global
+                                    </p>
+                                </div>
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent transition group-hover:ring-violet-400/50"
+                                ></div>
                             </div>
                         </div>
                     </div>
