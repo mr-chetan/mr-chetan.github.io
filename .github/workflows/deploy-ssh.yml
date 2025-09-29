@@ -103,13 +103,20 @@ jobs:
             echo "Deployment completed successfully!"
 
       - name: Health check
-        if: ${{ secrets.HEALTH_CHECK_URL }}
+        env:
+          HEALTH_CHECK_URL: ${{ secrets.HEALTH_CHECK_URL }}
         run: |
+          # Skip health check if URL is not provided
+          if [ -z "$HEALTH_CHECK_URL" ]; then
+            echo "⏭️ Health check skipped - HEALTH_CHECK_URL not configured"
+            exit 0
+          fi
+
           # Wait a moment for the server to restart
           sleep 10
 
           # Check if the website is accessible
-          response=$(curl -s -o /dev/null -w "%{http_code}" ${{ secrets.HEALTH_CHECK_URL }})
+          response=$(curl -s -o /dev/null -w "%{http_code}" "$HEALTH_CHECK_URL")
           if [ $response -eq 200 ]; then
             echo "✅ Health check passed! Website is accessible."
           else
@@ -119,10 +126,16 @@ jobs:
 
       - name: Notify deployment status
         if: always()
+        env:
+          HEALTH_CHECK_URL: ${{ secrets.HEALTH_CHECK_URL }}
         run: |
           if [ "${{ job.status }}" == "success" ]; then
             echo "🚀 Deployment successful!"
-            echo "Website URL: ${{ secrets.HEALTH_CHECK_URL || 'Your website URL' }}"
+            if [ -n "$HEALTH_CHECK_URL" ]; then
+              echo "Website URL: $HEALTH_CHECK_URL"
+            else
+              echo "Website deployed to server successfully!"
+            fi
           else
             echo "💥 Deployment failed!"
           fi
