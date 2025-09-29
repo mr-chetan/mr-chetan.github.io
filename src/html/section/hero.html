@@ -1,0 +1,179 @@
+<!-- Hero Section -->
+<section
+    id="about"
+    class="from-primary-50 to-primary-100 dark:from-primary-900 dark:to-primary-700 flex items-center bg-gradient-to-br pt-16"
+>
+    <div class="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8">
+        <img
+            src="/public/chetan.jpeg"
+            alt="Mr Chetan - Professional Software Developer"
+            class="border-primary-200 dark:border-primary-700 mx-auto mb-8 h-32 w-32 rounded-full border-4 shadow-lg"
+            loading="eager"
+            decoding="async"
+        />
+        <h1 class="mb-4 text-4xl font-bold text-gray-900 md:text-6xl dark:text-white">Mr Chetan</h1>
+        <span
+            x-data="{
+                            texts: [
+                                'Laravel Developer',
+                                'Flutter Developer',
+                                'PHP Developer',
+                                'Full Stack Developer',
+                                'App Developer',
+                                'Web Designer',
+                                'Freelancer'
+                            ],
+                            current: 0,
+                            display: '',
+                            isTyping: false,
+                            isErasing: false,
+                            typeSpeed: 50,
+                            eraseSpeed: 50,
+                            pause: 2000,
+                            timeoutId: null,
+
+                            clearCurrentTimeout() {
+                                if (this.timeoutId) {
+                                    clearTimeout(this.timeoutId);
+                                    this.timeoutId = null;
+                                }
+                            },
+
+                            typeText() {
+                                if (this.isTyping || this.isErasing) return;
+
+                                this.isTyping = true;
+                                this.isErasing = false;
+
+                                const text = this.texts[this.current];
+                                let charIndex = 0;
+
+                                const type = () => {
+                                    if (charIndex < text.length) {
+                                        this.display = text.substring(0, charIndex + 1);
+                                        charIndex++;
+                                        this.timeoutId = setTimeout(type, this.typeSpeed);
+                                    } else {
+                                        this.isTyping = false;
+                                        this.timeoutId = setTimeout(() => this.eraseText(), this.pause);
+                                    }
+                                };
+
+                                this.display = '';
+                                type();
+                            },
+
+                            eraseText() {
+                                if (this.isErasing || this.isTyping) return;
+
+                                this.isErasing = true;
+                                this.isTyping = false;
+
+                                const text = this.display;
+                                let charIndex = text.length;
+
+                                const erase = () => {
+                                    if (charIndex > 0) {
+                                        charIndex--;
+                                        this.display = text.substring(0, charIndex);
+                                        this.timeoutId = setTimeout(erase, this.eraseSpeed);
+                                    } else {
+                                        this.isErasing = false;
+                                        this.current = (this.current + 1) % this.texts.length;
+                                        this.timeoutId = setTimeout(() => this.typeText(), 300);
+                                    }
+                                };
+
+                                erase();
+                            },
+
+                            init() {
+                                this.typeText();
+                            },
+
+                            destroy() {
+                                this.clearCurrentTimeout();
+                            }
+                        }"
+            x-init="init()"
+            class="text-primary-600 dark:text-primary-400 mb-4 block min-h-[2.5rem] text-2xl font-semibold transition-all duration-300"
+            x-text="display"
+        ></span>
+        <p class="dark:text-dark-300 mb-8 text-xl text-gray-600 md:text-2xl">Software Developer from Jaipur, India</p>
+        <div class="mb-8 flex justify-center space-x-4 drop-shadow-lg">
+            <a href="https://www.linkedin.com/in/mr-chetan/" target="_blank" rel="noopener noreferrer">
+                <svg class="size-6" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        fill="#0076B2"
+                        d="M116 3H12v0c-4.92-.06-8.94 3.88-9 8.8v104.42 0c.07 4.9 4.09 8.83 9 8.78h104v0c4.91.03 8.93-3.9 9-8.81V11.77v0c-.09-4.9-4.11-8.81-9-8.77Z"
+                    ></path>
+                    <path
+                        fill="#FFF"
+                        d="M21.06 48.73h18.11V107H21.06Zm9.06-29v0c5.79 0 10.49 4.7 10.49 10.5 -.01 5.79-4.71 10.49-10.51 10.49 -5.8-.01-10.5-4.71-10.5-10.51 0-.01 0-.01 0-.01v0c0-5.8 4.7-10.5 10.5-10.49m20.41 29h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41 18.34-.04 21.74 12.03 21.74 27.68v32H88.87V78.63c0-6.75-.12-15.44-9.41-15.44 -9.29 0-10.87 7.36-10.87 15v28.79H50.51Z"
+                    ></path>
+                </svg>
+                <span class="sr-only">LinkedIn</span>
+            </a>
+            <a
+                href="https://github.com/mr-chetan"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-900 dark:text-white"
+            >
+                <svg class="size-6" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        fill-rule="evenodd"
+                        d="M7.976 0v0C3.57121.0005521.000552 3.57121 0 7.976c0 3.522 2.3 6.507 5.431 7.584 .392.049.538-.196.538-.392v-1.37c-2.201.49-2.69-1.076-2.69-1.076 -.343-.93-.881-1.175-.881-1.175 -.734-.489.048-.489.048-.489 .783.049 1.224.832 1.224.832 .734 1.223 1.859.88 2.3.685 .048-.538.293-.88.489-1.076 -1.762-.196-3.621-.881-3.621-3.964 0-.88.293-1.566.832-2.153 -.05-.147-.343-.978.098-2.055 0 0 .685-.196 2.201.832 .636-.196 1.322-.245 2.007-.245s1.37.098 2.006.245c1.517-1.027 2.202-.832 2.202-.832 .44 1.077.146 1.908.097 2.104v0c.538892.587083.836068 1.3561.832 2.153 0 3.083-1.86 3.719-3.62 3.915 .293.244.538.733.538 1.467v2.202c0 .196.146.44.538.392v0C13.8214 14.4624 16.0082 11.4087 16 7.976c-.049-4.404-3.62-7.976-8.024-7.976Z"
+                    ></path>
+                </svg>
+                <span class="sr-only">GitHub</span>
+            </a>
+            <a href="https://stackoverflow.com/users/13265630/chetan" target="_blank" rel="noopener noreferrer">
+                <svg class="size-6" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#BCBBBB" d="M101.072 82.51h11.37V128H10.04V82.51h11.37v34.11h79.64Z"></path>
+                    <path
+                        fill="#F58025"
+                        d="M33.82 79.13L89.7 90.868l2.34-11.17 -55.88-11.75Zm7.39-26.75l51.76 24.1 4.82-10.35 -51.768-24.1Zm14.32-25.39l43.88 36.53 7.3-8.78 -43.89-36.53Zm28.33-27L74.69 6.8l34.08 45.802 9.16-6.81ZM32.79 105.25h56.89V93.87H32.79Z"
+                    ></path>
+                </svg>
+                <span class="sr-only">Stack Overflow</span>
+            </a>
+        </div>
+        <a
+            href="/Chetans-CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-primary-600 hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-500 inline-block rounded-lg px-6 py-3 font-bold text-white transition duration-300"
+        >
+            <span class="align-middle">
+                <svg
+                    class="inline-block size-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7ZM5 18v2h14v-2H5Z"></path>
+                </svg>
+                Download CV
+            </span>
+        </a>
+        <div class="mt-8 font-medium">
+            <a
+                href="/#contact"
+                class="text-primary-600 hover:text-primary-700 dark:text-primary-200 dark:hover:text-primary-50"
+            >
+                <span class="inline-flex items-center justify-center gap-1">
+                    Contact Me
+                    <svg
+                        class="inline-block size-5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2L2 14Z"></path>
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
