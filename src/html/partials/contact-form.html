@@ -42,6 +42,7 @@
                             this.errors[key] = Array.isArray(vErrors[key]) ? vErrors[key][0] : vErrors[key];
                         }
                     });
+                    this.errors.submit = data.message || 'Please correct the errors and try again.';
                     return; // do not proceed to success state
                 }
                 if (!res.ok) throw new Error('Network error');
@@ -57,6 +58,7 @@
         }
     }"
     @submit.prevent="submitForm()"
+    novalidate
 >
     <!-- Success Message -->
     <div
@@ -161,7 +163,7 @@
             />
         </div>
         <span class="text-xs text-gray-400" x-show="form.phone">Number: +<span x-text="form.country"></span><span x-show="form.country && form.phone">-</span><span x-text="form.phone"></span></span>
-        <p x-show="errors.country" x-text="errors.phone" class="mt-1 text-sm text-red-600 dark:text-red-400"></p>
+        <p x-show="errors.country" x-text="errors.country" class="mt-1 text-sm text-red-600 dark:text-red-400"></p>
         <p x-show="errors.phone" x-text="errors.phone" class="mt-1 text-sm text-red-600 dark:text-red-400"></p>
     </div>
 
