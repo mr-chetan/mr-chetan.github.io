@@ -1,0 +1,128 @@
+name: Deploy to Server via SSH
+
+on:
+  # Runs on pushes targeting the main branch
+  push:
+    branches: ["main"]
+    paths-ignore:
+      - "README.md"
+      - ".github/workflows/deploy.yml"
+      - "docs/**"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "ssh-deploy"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Create deployment archive
+        run: |
+          cd dist
+          tar -czf ../website.tar.gz .
+          cd ..
+
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            # Create backup of current deployment
+            if [ -d "${{ secrets.DEPLOY_PATH }}" ]; then
+              cp -r ${{ secrets.DEPLOY_PATH }} ${{ secrets.DEPLOY_PATH }}_backup_$(date +%Y%m%d_%H%M%S)
+              # Keep only last 3 backups
+              cd $(dirname ${{ secrets.DEPLOY_PATH }})
+              ls -t | grep "_backup_" | tail -n +4 | xargs rm -rf
+            fi
+
+            # Create deployment directory if it doesn't exist
+            mkdir -p ${{ secrets.DEPLOY_PATH }}
+
+            # Clear current deployment
+            rm -rf ${{ secrets.DEPLOY_PATH }}/*
+
+      - name: Copy files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          source: "website.tar.gz"
+          target: "/tmp/"
+
+      - name: Extract and finalize deployment
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            # Extract files to deployment directory
+            cd ${{ secrets.DEPLOY_PATH }}
+            tar -xzf /tmp/website.tar.gz
+
+            # Set proper permissions
+            chown -R ${{ secrets.WEB_USER || 'www-data' }}:${{ secrets.WEB_GROUP || 'www-data' }} ${{ secrets.DEPLOY_PATH }}
+            find ${{ secrets.DEPLOY_PATH }} -type f -exec chmod 644 {} \;
+            find ${{ secrets.DEPLOY_PATH }} -type d -exec chmod 755 {} \;
+
+            # Clean up temporary files
+            rm -f /tmp/website.tar.gz
+
+            # Restart web server if specified
+            if [ -n "${{ secrets.RESTART_COMMAND }}" ]; then
+              ${{ secrets.RESTART_COMMAND }}
+            fi
+
+            echo "Deployment completed successfully!"
+
+      - name: Health check
+        if: ${{ secrets.HEALTH_CHECK_URL }}
+        run: |
+          # Wait a moment for the server to restart
+          sleep 10
+
+          # Check if the website is accessible
+          response=$(curl -s -o /dev/null -w "%{http_code}" ${{ secrets.HEALTH_CHECK_URL }})
+          if [ $response -eq 200 ]; then
+            echo "✅ Health check passed! Website is accessible."
+          else
+            echo "❌ Health check failed! HTTP status: $response"
+            exit 1
+          fi
+
+      - name: Notify deployment status
+        if: always()
+        run: |
+          if [ "${{ job.status }}" == "success" ]; then
+            echo "🚀 Deployment successful!"
+            echo "Website URL: ${{ secrets.HEALTH_CHECK_URL || 'Your website URL' }}"
+          else
+            echo "💥 Deployment failed!"
+          fi
