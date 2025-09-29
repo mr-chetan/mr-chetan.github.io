@@ -3,84 +3,60 @@
         form: {
             name: '',
             email: '',
+            country: '', // numeric without plus
             phone: '',
             message: '',
         },
         errors: {
             name: '',
             email: '',
+            country: '',
             phone: '',
             message: '',
+            submit: ''
         },
         isSubmitting: false,
         isSubmitted: false,
-
-        validateField(field) {
-            this.errors[field] = '';
-
-            if (!this.form[field].trim()) {
-                this.errors[field] = field.charAt(0).toUpperCase() + field.slice(1) + ' is required';
-                return false;
-            }
-
-            if (field === 'email') {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(this.form.email)) {
-                    this.errors.email = 'Please enter a valid email address';
-                    return false;
-                }
-            }
-
-            if (field === 'phone') {
-                const phoneRegex = /^[\+]?[1-9][\d\s\-\(\)]{8,}$/;
-                if (!phoneRegex.test(this.form.phone)) {
-                    this.errors.phone = 'Please enter a valid phone number';
-                    return false;
-                }
-            }
-
-            return true;
-        },
-
-        validateForm() {
-            let isValid = true;
-
-            Object.keys(this.form).forEach(field => {
-                if (!this.validateField(field)) {
-                    isValid = false;
-                }
-            });
-
-            return isValid;
-        },
-
         async submitForm() {
-            if (!this.validateForm()) return;
-
             this.isSubmitting = true;
-
+            // Clear previous field errors
+            Object.keys(this.errors).forEach(k=>{ this.errors[k]=''; });
             try {
-                // Simulate form submission (replace with actual endpoint)
-                await new Promise(resolve => setTimeout(resolve, 2000));
-
-                // Success
+                const payload = {
+                    name: this.form.name || null,
+                    email: this.form.email || null,
+                    country: this.form.country || null,
+                    phone: this.form.phone || null,
+                    message: this.form.message || null,
+                };
+                const res = await fetch('https://admin.mrchetan.com/api/app/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (res.status === 422) {
+                    const data = await res.json();
+                    const vErrors = data.errors || {};
+                    Object.keys(vErrors).forEach(key => {
+                        if (this.errors[key] !== undefined) {
+                            this.errors[key] = Array.isArray(vErrors[key]) ? vErrors[key][0] : vErrors[key];
+                        }
+                    });
+                    return; // do not proceed to success state
+                }
+                if (!res.ok) throw new Error('Network error');
                 this.isSubmitted = true;
-                this.form = { name: '', email: '', phone: '', message: '' };
-
-                // Reset success message after 5 seconds
-                setTimeout(() => {
-                    this.isSubmitted = false;
-                }, 5000);
-
-            } catch (error) {
-                this.errors.submit = 'There was an error sending your message. Please try again.';
+                const keepCountry = this.form.country;
+                this.form = { name: '', email: '', country: keepCountry, phone: '', message: '' };
+                setTimeout(()=>{ this.isSubmitted=false; }, 5000);
+            } catch (e) {
+                if (!this.errors.submit) this.errors.submit = 'There was an error sending your message. Please try again.';
             } finally {
                 this.isSubmitting = false;
             }
-        },
+        }
     }"
     @submit.prevent="submitForm()"
-    novalidate
 >
     <!-- Success Message -->
     <div
@@ -121,11 +97,10 @@
             type="text"
             id="contact-name"
             x-model="form.name"
-            @blur="validateField('name')"
             @input="errors.name = ''"
             required
             autocomplete="name"
-            :class="errors.name ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-primary-500 focus:ring-primary-500'"
+            :class="errors.name ? 'border-red-300 focus:ring-red-500' : 'border-gray-300 focus:ring-primary-500'"
             class="dark:bg-dark-700 w-full rounded-lg border px-4 py-2 transition-colors focus:ring-2 dark:border-gray-600 dark:text-white"
         />
         <p x-show="errors.name" x-text="errors.name" class="mt-1 text-sm text-red-600 dark:text-red-400"></p>
@@ -139,32 +114,54 @@
             type="email"
             id="contact-email"
             x-model="form.email"
-            @blur="validateField('email')"
             @input="errors.email = ''"
             required
             autocomplete="email"
-            :class="errors.email ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-primary-500 focus:ring-primary-500'"
+            :class="errors.email ? 'border-red-300 focus:ring-red-500' : 'border-gray-300 focus:ring-primary-500'"
             class="dark:bg-dark-700 w-full rounded-lg border px-4 py-2 transition-colors focus:ring-2 dark:border-gray-600 dark:text-white"
         />
         <p x-show="errors.email" x-text="errors.email" class="mt-1 text-sm text-red-600 dark:text-red-400"></p>
     </div>
 
     <div class="mb-6">
-        <label class="dark:text-dark-300 required mb-2 block text-sm font-medium text-gray-700" for="contact-phone">
-            Phone
+        <label class="dark:text-dark-300 mb-2 block text-sm font-medium text-gray-700" for="contact-phone">
+            Phone (optional)
         </label>
-        <input
-            type="tel"
-            id="contact-phone"
-            x-model="form.phone"
-            @blur="validateField('phone')"
-            @input="errors.phone = ''"
-            required
-            autocomplete="tel"
-            placeholder="+91 1234567890"
-            :class="errors.phone ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-primary-500 focus:ring-primary-500'"
-            class="dark:bg-dark-700 w-full rounded-lg border px-4 py-2 transition-colors focus:ring-2 dark:border-gray-600 dark:text-white"
-        />
+        <div class="flex items-center justify-between">
+
+        </div>
+        <div class="flex">
+            <div class="relative flex items-center">
+                <label class="sr-only" for="country-code">Country code</label>
+                <span
+                    class="dark:bg-dark-700 pointer-events-none rounded-l-lg border border-r-0 bg-gray-50 px-3 py-3 text-sm text-gray-500 select-none dark:border-gray-600 dark:text-gray-300"
+                    >+</span
+                >
+                <input
+                    id="country-code"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    maxlength="4"
+                    x-model="form.country"
+                    @input="errors.country=''; form.country=form.country.replace(/[^0-9]/g,'')"
+                    class="dark:bg-dark-700 focus:border-primary-500 focus:ring-primary-500 w-16 border border-r-0 bg-white px-1 py-3 text-center text-sm focus:ring-2 dark:border-gray-600 dark:text-white"
+                    placeholder="91"
+                />
+            </div>
+            <input
+                type="tel"
+                id="contact-phone"
+                x-model="form.phone"
+                @input="errors.phone = ''"
+                autocomplete="tel"
+                placeholder="1234567890"
+                :class="errors.phone ? 'border-red-300 focus:ring-red-500' : 'border-gray-300 focus:ring-primary-500'"
+                class="dark:bg-dark-700 w-full rounded-r-lg border px-4 py-2 transition-colors focus:ring-2 dark:border-gray-600 dark:text-white"
+            />
+        </div>
+        <span class="text-xs text-gray-400" x-show="form.phone">Number: +<span x-text="form.country"></span><span x-show="form.country && form.phone">-</span><span x-text="form.phone"></span></span>
+        <p x-show="errors.country" x-text="errors.phone" class="mt-1 text-sm text-red-600 dark:text-red-400"></p>
         <p x-show="errors.phone" x-text="errors.phone" class="mt-1 text-sm text-red-600 dark:text-red-400"></p>
     </div>
 
@@ -175,17 +172,16 @@
         <textarea
             id="contact-message"
             x-model="form.message"
-            @blur="validateField('message')"
             @input="errors.message = ''"
             rows="5"
             required
-            placeholder="Tell me about your project requirements..."
-            :class="errors.message ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-primary-500 focus:ring-primary-500'"
+            placeholder="Tell me about your query or project requirements..."
+            :class="errors.message ? 'border-red-300 focus:ring-red-500' : 'border-gray-300 focus:ring-primary-500'"
             class="dark:bg-dark-700 w-full resize-y rounded-lg border px-4 py-2 transition-colors focus:ring-2 dark:border-gray-600 dark:text-white"
         ></textarea>
         <p x-show="errors.message" x-text="errors.message" class="mt-1 text-sm text-red-600 dark:text-red-400"></p>
         <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-            Character count: <span x-text="form.message.length"></span>/1000
+            Character count: <span x-text="form.message.length"></span>/15000
         </p>
     </div>
 
