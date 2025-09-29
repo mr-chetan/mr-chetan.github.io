@@ -112,6 +112,10 @@ jobs:
             - name: Health check
               run: |
                   HEALTH_CHECK_URL="${{ secrets.HEALTH_CHECK_URL }}"
+                  EXPECTED_CODES="${{ secrets.HEALTH_CHECK_EXPECTED_CODES }}"
+                  CUSTOM_HEADERS="${{ secrets.HEALTH_CHECK_HEADERS }}"
+                  HOST_HEADER="${{ secrets.HEALTH_CHECK_HOST_HEADER }}"
+                  EXTRA_OPTS="${{ secrets.HEALTH_CHECK_EXTRA_OPTS }}"
 
                   # Skip health check if URL is not provided
                   if [ -z "$HEALTH_CHECK_URL" ]; then
@@ -124,24 +128,78 @@ jobs:
                   # Wait a moment for the server to restart
                   sleep 10
 
+                  if [ -z "$EXPECTED_CODES" ]; then
+                    EXPECTED_CODES="200 301 302"
+                  fi
+                  read -r -a expected_codes <<< "$EXPECTED_CODES"
+                  echo "ℹ️ Accepting HTTP status codes: ${EXPECTED_CODES}"
+
+                  curl_args=(
+                    --location
+                    --silent
+                    --show-error
+                    --output /dev/null
+                    --write-out "%{http_code}"
+                    --connect-timeout 10
+                    --max-time 30
+                    --retry 0
+                    -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+                    -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"
+                    -H "Accept-Language: en-US,en;q=0.9"
+                    -H "Cache-Control: no-cache"
+                    -H "Pragma: no-cache"
+                    --compressed
+                    -e "$HEALTH_CHECK_URL"
+                  )
+
+                  if [ -n "$HOST_HEADER" ]; then
+                    curl_args+=(-H "Host: $HOST_HEADER")
+                  fi
+
+                  if [ -n "$CUSTOM_HEADERS" ]; then
+                    echo "ℹ️ Applying custom headers from HEALTH_CHECK_HEADERS"
+                    while IFS= read -r header; do
+                      [ -z "$header" ] && continue
+                      curl_args+=(-H "$header")
+                    done <<< "$CUSTOM_HEADERS"
+                  fi
+
+                  if [ -n "$EXTRA_OPTS" ]; then
+                    echo "ℹ️ Adding custom curl options from HEALTH_CHECK_EXTRA_OPTS"
+                    # shellcheck disable=SC2206
+                    extra_opts=( $EXTRA_OPTS )
+                    curl_args+=("${extra_opts[@]}")
+                  fi
+
                   # Check if the website is accessible with retry logic
                   max_attempts=3
                   attempt=1
 
                   while [ $attempt -le $max_attempts ]; do
                     echo "🔄 Health check attempt $attempt/$max_attempts"
+                    tmp_err=$(mktemp)
 
-                    # Use curl with a custom user agent to avoid bot protection issues
-                    if response=$(curl -A "Mozilla/5.0" -s -o /dev/null -w "%{http_code}" --connect-timeout 10 --max-time 30 "$HEALTH_CHECK_URL" 2>/dev/null); then
-                      if [ "$response" -eq 200 ] || [ "$response" -eq 301 ] || [ "$response" -eq 302 ]; then
+                    response=$(curl "${curl_args[@]}" "$HEALTH_CHECK_URL" 2>"$tmp_err")
+                    exit_code=$?
+
+                    if [ $exit_code -eq 0 ]; then
+                      if printf '%s\n' "${expected_codes[@]}" | grep -qx "$response"; then
                         echo "✅ Health check passed! Website is accessible (HTTP $response)."
+                        rm -f "$tmp_err"
                         exit 0
-                      else
-                        echo "⚠️ Health check returned HTTP $response"
                       fi
+
+                      echo "⚠️ Health check returned HTTP $response"
                     else
-                      echo "❌ Health check failed - curl command failed"
+                      echo "❌ Health check failed - curl exit code $exit_code"
+                      if [ -s "$tmp_err" ]; then
+                        echo "--- curl error output ---"
+                        cat "$tmp_err"
+                        echo "--------------------------"
+                      fi
                     fi
+
+                    rm -f "$tmp_err"
 
                     if [ $attempt -lt $max_attempts ]; then
                       echo "⏳ Waiting 15 seconds before retry..."
