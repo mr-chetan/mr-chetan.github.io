@@ -105,6 +105,10 @@ jobs:
 
                       echo "Deployment completed successfully!"
 
+    health-check:
+        needs: build-and-deploy
+        runs-on: ubuntu-latest
+        steps:
             - name: Health check
               run: |
                   HEALTH_CHECK_URL="${{ secrets.HEALTH_CHECK_URL }}"
@@ -150,6 +154,10 @@ jobs:
                   echo "❌ Health check failed after $max_attempts attempts"
                   exit 1
 
+    cleanup:
+        needs: health-check
+        runs-on: ubuntu-latest
+        steps:
             - name: Clean up old backups
               uses: appleboy/ssh-action@v1.0.3
               with:
@@ -164,6 +172,10 @@ jobs:
                       ls -t | grep "$(basename ${{ secrets.DEPLOY_PATH }})_backup_" | tail -n +4 | xargs rm -rf || true
                       echo "✅ Old backups cleaned up, last 3 retained."
 
+    notify:
+        needs: cleanup
+        runs-on: ubuntu-latest
+        steps:
             - name: Notify deployment status
               if: always()
               run: |
