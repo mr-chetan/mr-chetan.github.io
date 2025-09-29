@@ -77,11 +77,14 @@ jobs:
 
             - name: Extract and finalize deployment
               uses: appleboy/ssh-action@v1.0.3
+              env:
+                  RESTART_COMMAND: ${{ secrets.RESTART_COMMAND }}
               with:
                   host: ${{ secrets.SSH_HOST }}
                   username: ${{ secrets.SSH_USERNAME }}
                   key: ${{ secrets.SSH_PRIVATE_KEY }}
                   port: ${{ secrets.SSH_PORT || 22 }}
+                  envs: RESTART_COMMAND
                   script: |
                       # Extract files to deployment directory
                       cd ${{ secrets.DEPLOY_PATH }}
@@ -96,35 +99,58 @@ jobs:
                       rm -f /tmp/website.tar.gz
 
                       # Restart web server if specified
-                      if [ -n "${{ secrets.RESTART_COMMAND }}" ]; then
-                        ${{ secrets.RESTART_COMMAND }}
+                      if [ -n "$RESTART_COMMAND" ]; then
+                        eval "$RESTART_COMMAND"
                       fi
 
                       echo "Deployment completed successfully!"
 
             - name: Health check
-              env:
-                  HEALTH_CHECK_URL: ${{ secrets.HEALTH_CHECK_URL }}
               run: |
+                  HEALTH_CHECK_URL="${{ secrets.HEALTH_CHECK_URL }}"
+
                   # Skip health check if URL is not provided
                   if [ -z "$HEALTH_CHECK_URL" ]; then
                     echo "⏭️ Health check skipped - HEALTH_CHECK_URL not configured"
                     exit 0
                   fi
 
+                  echo "🔍 Performing health check on: $HEALTH_CHECK_URL"
+
                   # Wait a moment for the server to restart
                   sleep 10
 
-                  # Check if the website is accessible
-                  response=$(curl -s -o /dev/null -w "%{http_code}" "$HEALTH_CHECK_URL")
-                  if [ $response -eq 200 ]; then
-                    echo "✅ Health check passed! Website is accessible."
-                  else
-                    echo "❌ Health check failed! HTTP status: $response"
-                    exit 1
-                  fi
+                  # Check if the website is accessible with retry logic
+                  max_attempts=3
+                  attempt=1
 
-            - name: Clean up backup after successful deployment
+                  while [ $attempt -le $max_attempts ]; do
+                    echo "🔄 Health check attempt $attempt/$max_attempts"
+
+                    # Use curl with proper error handling
+                    if response=$(curl -s -o /dev/null -w "%{http_code}" --connect-timeout 10 --max-time 30 "$HEALTH_CHECK_URL" 2>/dev/null); then
+                      if [ "$response" -eq 200 ] || [ "$response" -eq 301 ] || [ "$response" -eq 302 ]; then
+                        echo "✅ Health check passed! Website is accessible (HTTP $response)."
+                        exit 0
+                      else
+                        echo "⚠️ Health check returned HTTP $response"
+                      fi
+                    else
+                      echo "❌ Health check failed - curl command failed"
+                    fi
+
+                    if [ $attempt -lt $max_attempts ]; then
+                      echo "⏳ Waiting 15 seconds before retry..."
+                      sleep 15
+                    fi
+
+                    attempt=$((attempt + 1))
+                  done
+
+                  echo "❌ Health check failed after $max_attempts attempts"
+                  exit 1
+
+            - name: Clean up old backups
               uses: appleboy/ssh-action@v1.0.3
               with:
                   host: ${{ secrets.SSH_HOST }}
@@ -132,22 +158,17 @@ jobs:
                   key: ${{ secrets.SSH_PRIVATE_KEY }}
                   port: ${{ secrets.SSH_PORT || 22 }}
                   script: |
-                      # Remove the backup created in this deployment
+                      # Remove backups older than the last 3
                       BACKUP_DIR=$(dirname ${{ secrets.DEPLOY_PATH }})
-                      LATEST_BACKUP=$(ls -t $BACKUP_DIR | grep "$(basename ${{ secrets.DEPLOY_PATH }})_backup_" | head -n 1)
-
-                      if [ -n "$LATEST_BACKUP" ]; then
-                        rm -rf "$BACKUP_DIR/$LATEST_BACKUP"
-                        echo "✅ Cleaned up backup: $LATEST_BACKUP"
-                      else
-                        echo "ℹ️ No backup found to clean up"
-                      fi
+                      cd "$BACKUP_DIR"
+                      ls -t | grep "$(basename ${{ secrets.DEPLOY_PATH }})_backup_" | tail -n +4 | xargs rm -rf || true
+                      echo "✅ Old backups cleaned up, last 3 retained."
 
             - name: Notify deployment status
               if: always()
-              env:
-                  HEALTH_CHECK_URL: ${{ secrets.HEALTH_CHECK_URL }}
               run: |
+                  HEALTH_CHECK_URL="${{ secrets.HEALTH_CHECK_URL }}"
+
                   if [ "${{ job.status }}" == "success" ]; then
                     echo "🚀 Deployment successful!"
                     if [ -n "$HEALTH_CHECK_URL" ]; then
