@@ -127,8 +127,8 @@ jobs:
                   while [ $attempt -le $max_attempts ]; do
                     echo "🔄 Health check attempt $attempt/$max_attempts"
 
-                    # Use curl with proper error handling
-                    if response=$(curl -s -o /dev/null -w "%{http_code}" --connect-timeout 10 --max-time 30 "$HEALTH_CHECK_URL" 2>/dev/null); then
+                    # Use curl with a custom user agent to avoid bot protection issues
+                    if response=$(curl -A "Mozilla/5.0" -s -o /dev/null -w "%{http_code}" --connect-timeout 10 --max-time 30 "$HEALTH_CHECK_URL" 2>/dev/null); then
                       if [ "$response" -eq 200 ] || [ "$response" -eq 301 ] || [ "$response" -eq 302 ]; then
                         echo "✅ Health check passed! Website is accessible (HTTP $response)."
                         exit 0
