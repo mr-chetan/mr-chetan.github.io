@@ -124,6 +124,25 @@ jobs:
             exit 1
           fi
 
+      - name: Clean up backup after successful deployment
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            # Remove the backup created in this deployment
+            BACKUP_DIR=$(dirname ${{ secrets.DEPLOY_PATH }})
+            LATEST_BACKUP=$(ls -t $BACKUP_DIR | grep "$(basename ${{ secrets.DEPLOY_PATH }})_backup_" | head -n 1)
+
+            if [ -n "$LATEST_BACKUP" ]; then
+              rm -rf "$BACKUP_DIR/$LATEST_BACKUP"
+              echo "✅ Cleaned up backup: $LATEST_BACKUP"
+            else
+              echo "ℹ️ No backup found to clean up"
+            fi
+
       - name: Notify deployment status
         if: always()
         env:
